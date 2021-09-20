@@ -8,14 +8,17 @@
     </thead>
     @foreach ($combos as $combo)
         <li class="card mb-3 mt-2">
-            <div class="card-header col-md">
-                {!! nl2br(e($combo->fighter)) !!} &nbsp; &nbsp; Ver. {!! nl2br(e($combo->version)) !!}
+            <ul class="breadcrumb mb-1 rounded-0 border-bottom">
+                <li class="breadcrumb-item">{!! nl2br(e($combo->fighter)) !!}</li>
+                <li class="breadcrumb-item"> Ver. {!! nl2br(e($combo->version)) !!}</li>
                 @if($combo->difficulty === 'easy')
-                <span class="col-md">
-                    <i class="fas fa-seedling text-success"></i>
-                </span>
+                    <li class="breadcrumb-item">
+                        <i class="fas fa-seedling text-success"></i>
+                    </li>
                 @endif
-            </div>
+                <li class="breadcrumb-item">採用数&nbsp;:&nbsp;<i class="bi bi-award-fill text-success"></i>{!! nl2br(e($combo->adoption_count)) !!}</li>
+                <li class="breadcrumb-item">お気に入り&nbsp;:&nbsp;<i class="bi bi-star-fill text-warning"></i>:{!! nl2br(e($combo->favorite_count)) !!}</li>
+            </ul>
             <div class="row card-body py-1">
                 <div class="col-md">
                     場所&nbsp;:&nbsp;{!! nl2br(e($combo->place)) !!}
@@ -46,24 +49,27 @@
                     ダメージ&nbsp;:&nbsp;{!! nl2br(e($combo->damage)) !!}
                 </div>
             </div>
-            <div class="card-body border-top border-bottom">
+            <div style="font-size: 20px" class="card-body border-top">
                 {!! nl2br(e($combo->recipe)) !!}
             </div>
-            @if (Auth::check())
-                <div class="mt-0 pt-0 border-bottom">
-                    <div class="button-group mt-0 pt-0">
-                        <div class="btn mt-0 pt-0">
-                            @include("favorite_and_adopt.adopt_button")
-                        </div>
-                        <div class="btn mt-0 pt-0">
-                            @include("favorite_and_adopt.favorite_button")
-                        </div>
-                        <div class="btn mt-0 pt-0">
-                            @include("combos.combos_delete_button", ['user' => $user])
-                        </div>
-                    </div>
-                </div>
-            @endif
+            <div class="card-body border-top border-bottom py-1">
+                {!! nl2br(e($combo->words)) !!}
+            </div>
+            <div class="mt-0 pt-0">
+                <div class="button-group mt-0 pt-0">
+                    @if (Auth::check())
+                            <div class="btn mt-0 pt-0">
+                                @include("favorite_and_adopt.adopt_button")
+                            </div>
+                            <div class="btn mt-0 pt-0">
+                                @include("favorite_and_adopt.favorite_button")
+                            </div>
+                            <div class="btn mt-0 pt-0">
+                                @include("combos.combos_delete_button", ['user' => $user])
+                            </div>
+                    @endif
+            </div>
+            </div>
         </li>
     @endforeach
 </ul>

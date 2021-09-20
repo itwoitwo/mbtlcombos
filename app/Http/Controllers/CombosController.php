@@ -16,7 +16,7 @@ class CombosController extends Controller
     public function index()
     {
         $combos = Combo::all();
-        $combos = Combo::sortable()->orderBy('created_at', 'desc')->paginate(1);
+        $combos = Combo::sortable()->orderBy('created_at', 'desc')->paginate(10);
         $user = \Auth::user();
         $data = [
             'user' => $user,
@@ -130,7 +130,7 @@ class CombosController extends Controller
             $query->whereNotNull('video');
         }
 
-        $combos = $query->sortable()->orderBy('created_at', 'desc')->paginate(1);
+        $combos = $query->sortable()->orderBy('created_at', 'desc')->paginate(10);
 
         $user = \Auth::user();
         $data = [
@@ -196,7 +196,7 @@ class CombosController extends Controller
             $query->whereNotNull('video');
         }
 
-        $combos = $query->orderBy('created_at', 'desc')->paginate(1);
+        $combos = $query->orderBy('created_at', 'desc')->paginate(10);
 
         $user = User::find($request->user_id);
 
@@ -263,7 +263,7 @@ class CombosController extends Controller
             $query->whereNotNull('video');
         }
 
-        $combos = $query->orderBy('created_at', 'desc')->paginate(1);
+        $combos = $query->orderBy('created_at', 'desc')->paginate(10);
 
         $user = User::find($request->user_id);
 
@@ -329,7 +329,7 @@ class CombosController extends Controller
             $query->whereNotNull('video');
         }
 
-        $combos = $query->orderBy('created_at', 'desc')->paginate(1);
+        $combos = $query->orderBy('created_at', 'desc')->paginate(10);
 
         $user = User::find($request->user_id);
 

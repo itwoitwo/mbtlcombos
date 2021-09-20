@@ -73,7 +73,7 @@ class User extends Authenticatable
             $this->favorites()->detach($comboId);
             $favorite_count = Combo::find($comboId)->favorite_count;
             $favorite_count -= 1;
-            if ($favorite_count > 0){
+            if ($favorite_count >= 0){
                 Combo::find($comboId)->update(['favorite_count' => $favorite_count]);
             }
         } else {
@@ -116,7 +116,7 @@ class User extends Authenticatable
             $this->adopts()->detach($comboId);
             $adoption_count = Combo::find($comboId)->adoption_count;
             $adoption_count -= 1;
-            if ($adoption_count > 0){
+            if ($adoption_count >= 0){
                 Combo::find($comboId)->update(['adoption_count' => $adoption_count]);
             }
         } else {
