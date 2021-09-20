@@ -60,7 +60,7 @@ class CombosController extends Controller
             'words' => $request->一言コメント,
         ]);
     
-        return redirect()->route('users.adopts_index', ['id' => $request->user()->id])->with('is_after_complete', '完了しました');
+        return redirect()->route('users.adoptions_index', ['id' => $request->user()->id])->with('is_after_complete', '完了しました');
     }
 
     public function destroy($id)
@@ -141,7 +141,7 @@ class CombosController extends Controller
         return view('combos.index', $data);
     }
 
-    public function adopts_serch(Request $request)
+    public function adoptions_serch(Request $request)
     {   
         $query = Combo::query();
 
@@ -205,7 +205,7 @@ class CombosController extends Controller
             'combos' => $combos,
         ];
 
-        return view('users.show', $data);
+        return view('users.adoptions_index', $data);
     }
 
     public function favorites_index_serch(Request $request)

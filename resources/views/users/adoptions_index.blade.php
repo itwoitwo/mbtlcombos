@@ -11,7 +11,7 @@
             <div class="card-header bordere-bottom border-info">
                 検索フォーム
             </div>
-            {!! Form::open(['method' => 'get','route' => ['users.adopts_serch', $user->id]]) !!}
+            {!! Form::open(['method' => 'get','route' => ['users.adoptions_serch', $user->id]]) !!}
             {!!Form::hidden('user_id', $user->id) !!}
                 @include('combos.serch')
             {!! Form::close() !!}
