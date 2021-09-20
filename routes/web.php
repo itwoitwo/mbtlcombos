@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\CombosController;
+
 Route::get('combos_index', 'CombosController@index')->name('combos.index');
 Route::get('/', 'CombosController@welcome')->name('welcome');
 Route::get('about', 'CombosController@about')->name('about');
@@ -40,12 +42,12 @@ Route::group(['prefix' => 'users/{id}'], function () {
     Route::get('mycombos_serch', 'CombosController@mycombos_serch')->name('users.mycombos_serch');
 });
 
-// ログイン認証
 Route::group(['prefix' => 'combos/{id}'], function () {
     Route::post('favorite', 'FavoritesController@store')->name('favorites.favorite')->middleware('auth');
     Route::delete('unfavorite', 'FavoritesController@destroy')->name('favorites.unfavorite')->middleware('auth');
     Route::post('adopt', 'AdoptionsController@store')->name('adoptions.adopt')->middleware('auth');
     Route::delete('unadopt', 'AdoptionsController@destroy')->name('adoptions.unadopt')->middleware('auth');
+    Route::get('detail', 'CombosController@detail')->name('combos.detail');
 });
 
 Route::get('serch', 'CombosController@serch')->name('combos.serch');

@@ -9,6 +9,7 @@
                 'シエル' => 'シエル',
                 '翡翠' => '翡翠',
                 '琥珀' => '琥珀',
+                '翡翠＆琥珀' =>'翡翠＆琥珀',
                 '軋間紅摩' => '軋間紅摩',
                 '有馬都古' => '有馬都古',
                 'ノエル' => 'ノエル',
@@ -78,7 +79,7 @@
                 ],'' ,['class' => 'form-control']) !!}
         </div>
         <div class="form-group col-md-3 mb-2">
-            <i class="fas fa-moon fa-flip-horizontal text-warning ml-1"></i> {!! Form::label('moon', 'ムーンアイコン') !!}
+            <i class="fas fa-moon fa-flip-horizontal text-warning ml-1"></i>&nbsp;:&nbsp;{!! Form::label('moon', 'ムーンアイコン') !!}
             {!! Form::select('moon', [
                 '' => 'ノーゲージ可',
                 1 => '1カウント',

@@ -6,7 +6,7 @@
 	<li class="list-group-item {{ request()->route()->named('combos*') ? 'active' : '' }}"><a href="{{ route('combos.index') }}" class="link text-dark">コンボ検索</a></li>
 	@if (Auth::check())
 	<li class="list-group-item {{ request()->route()->named('users*') ? 'active' : '' }}">
-		<a href="{{ route('users.adoptions_index', ['id' => Auth::user()->id]) }}" class="link text-dark">ユーザーページ</a></li>
+		<a href="{{ route('users.adoptions_index', ['id' => Auth::user()->id]) }}" class="link text-dark">コンボ管理</a></li>
 	@else
 	<li class="list-group-item">{!! link_to_route('signup.get', '登録してコンボを管理する', [], ['class' => 'link text-dark']) !!}</li>
 	@endif

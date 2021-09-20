@@ -1,13 +1,6 @@
-<ul class="list-unstyled">
-    <thead>
-        <tr>
-            <td>@sortablelink('adoption_count', '採用数')
-            <td>@sortablelink('favorite_count', 'お気に入り数')
-            <td>@sortablelink('damage', 'ダメージ')
-            <td>@sortablelink('created_at', '作成日')
-    </thead>
-    @foreach ($combos as $combo)
-        <li class="card mb-3 mt-2">
+@extends('layouts.app')
+@section('content')
+        <div class="card mb-3 mt-2">
             <ul class="breadcrumb mb-1 rounded-0 border-bottom">
                 <li class="breadcrumb-item">{!! nl2br(e($combo->fighter)) !!}</li>
                 <li class="breadcrumb-item"> Ver. {!! nl2br(e($combo->version)) !!}</li>
@@ -64,37 +57,8 @@
                             <div class="btn mt-0 pt-0">
                                 @include("favorite_and_adopt.favorite_button")
                             </div>
-                            <div class="btn mt-0 pt-0">
-                                @include("combos.combos_delete_button")
-                            </div>
                     @endif
-                    @if(isset($combo->explain) || isset($combo->video))
-                    <div class="btn mt-0 pt-0">
-                        <a class="btn" data-toggle="collapse" href="#collapse{{$combo->id}}" role="button" aria-expanded="false" aria-controls="collapse{{$combo->id}}">
-                            <i class="far fa-file-alt text-primary"></i>&nbsp;詳細
-                        </a>
-                    </div>
-                    {{-- 展開領域 --}}
-                        <div class="collapse border-top" id="collapse{{$combo->id}}">
-                            @if(isset($combo->explain))
-                            <div class="card card-body">
-                                {!! nl2br(e($combo->explain)) !!}
-                            </div>
-                            @else
-                            @endif
-                            @if(isset($combo->video))
-                            <div class="card card-body border-0">
-                            <a href='{{nl2br(e($combo->video))}}' target="_blank" rel="noopener">
-                                {{nl2br(e($combo->video))}}
-                            </a> 
-                            </div>
-                            @else
-                            @endif
-                        </div>
-                    @endif
-                </div>
             </div>
-        </li>
-    @endforeach
-</ul>
-{{ $combos->appends(request()->query())->links('pagination::bootstrap-4') }}
+            </div>
+        </div>
+@endsection
