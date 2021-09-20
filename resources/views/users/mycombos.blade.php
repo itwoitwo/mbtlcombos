@@ -15,7 +15,7 @@
                 @include('combos.serch')
             {!! Form::close() !!}
         </div>
-        <br />
+        <br>
         @include('combos.combo_annotation')
     </div>
 </div>

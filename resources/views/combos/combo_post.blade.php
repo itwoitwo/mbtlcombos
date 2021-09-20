@@ -3,8 +3,8 @@
 @section('content')
 
 @include('combos.combo_annotation')
-<br />
-<br />
+<br>
+<br>
 {!! Form::open(['route' => 'combos.store']) !!}
     <div class="form-group">
         <div class="form-group row">
@@ -95,8 +95,8 @@
             {!! Form::label('一言コメント', '一言コメント（「確反」「ヒット確認簡単」「対空始動」など。最大20文字。）') !!}
             {!! Form::text('一言コメント', old('一言コメント'), ['class' => 'form-control']) !!}
         </div>
-        <br />
-        <br />
+        <br>
+        <br>
         <div class="form-group mb-4">
             {!! Form::label('explain', '備考（特殊な条件やコツなど）　※ダメージ、備考、動画は空欄可') !!}
             {!! Form::textarea('explain', old('explain'), ['class' => 'form-control', 'rows' => '2']) !!}

@@ -12,9 +12,9 @@
 	@endif
 	<li class="list-group-item {{ request()->route()->named('about') ? 'active' : '' }}">
 		<a href="{{ route('about') }}" class="link text-dark">MBTLCombosとは？</a></li>
-	<li class="list-group-item"><a href="/" class="link text-dark">トップに戻る</a></li>
+	<li class="list-group-item"><a href="{{route('top_page')}}" class="link text-dark">トップに戻る</a></li>
 	@if (isset($user))
-		<br />
+		<br>
 		@include('users.card')
 	@endif
 </ul>

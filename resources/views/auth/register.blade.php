@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="text-center">
-        <h1>Sign up</h1>
+        <h2>登録</h2>
     </div>
 
     <div class="row">
@@ -15,21 +15,21 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('login_id', 'ログインID') !!}
+                    {!! Form::label('login_id', 'ログインID（半角英数）') !!}
                     {!! Form::text('login_id', old('login_id'), ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password', 'Password') !!}
+                    {!! Form::label('password', 'パスワード（6文字以上）') !!}
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password_confirmation', 'Confirmation') !!}
+                    {!! Form::label('password_confirmation', '確認') !!}
                     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                 </div>
 
-                {!! Form::submit('Sign up', ['class' => 'btn btn-primary btn-block']) !!}
+                {!! Form::submit('登録する', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
         </div>
     </div>

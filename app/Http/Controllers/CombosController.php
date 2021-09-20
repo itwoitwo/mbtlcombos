@@ -342,6 +342,14 @@ class CombosController extends Controller
     }
 
     public function welcome()
+    {   
+        if(\Auth::check()){
+            return redirect()->route('combos.index');
+        }
+        return view('welcome');
+    }
+
+    public function top_page()
     {
         return view('welcome');
     }

@@ -12,7 +12,7 @@
             @include('combos.serch')
         {!! Form::close() !!}
     </div>
-    <br />
+    <br>
     @include('combos.combos')
     @include('combos.combo_annotation')
     </div>
