@@ -62,16 +62,19 @@
             <div class="mt-0 pt-0">
                 <div class="button-group mt-0 pt-0">
                     @if (Auth::check())
-                            <div class="btn mt-0 pt-0">
-                                @include("favorite_and_adopt.adopt_button")
-                            </div>
-                            <div class="btn mt-0 pt-0">
-                                @include("favorite_and_adopt.favorite_button")
-                            </div>
-                            <div class="btn mt-0 pt-0">
-                                @include("combos.combos_delete_button")
-                            </div>
+                        <div class="btn mt-0 pt-0">
+                            @include("favorite_and_adopt.adopt_button")
+                        </div>
+                        <div class="btn mt-0 pt-0">
+                            @include("favorite_and_adopt.favorite_button")
+                        </div>
+                        @if (Auth::id() == $combo->user_id)
+                        <div class="btn mt-0 pt-0">
+                            <a href="{{ route('combos.detail', ['id' => $combo->id]) }}" class="btn"><i class="far fa-edit"></i>編集</a>
+                        </div>
+                        @endif
                     @endif
+                    @include("combos.combos_delete_button")
                     @if(isset($combo->explain) || isset($combo->video))
                     <div class="btn mt-0 pt-0">
                         <a class="btn" data-toggle="collapse" href="#collapse{{$combo->id}}" role="button" aria-expanded="false" aria-controls="collapse{{$combo->id}}">

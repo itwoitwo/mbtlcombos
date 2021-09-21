@@ -18,7 +18,7 @@ class CombosController extends Controller
         $combos = Combo::all();
         $combos = Combo::sortable()->orderBy('created_at', 'desc')->paginate(10);
         $user = \Auth::user();
-        
+
         $data = [
             'user' => $user,
             'combos' => $combos,
@@ -31,7 +31,7 @@ class CombosController extends Controller
     {   
         $this->validate($request, [
             'キャラクター' => 'required|string|',
-            'ダメージ' => 'integer|nullable|digits:4',
+            'ダメージ' => 'integer|nullable|digits_between:1,4',
             'version' => 'required|string|',
             '始動技' => 'required|string|',
             'counter_hit' => 'required|string|',
@@ -62,6 +62,37 @@ class CombosController extends Controller
         ]);
     
         return redirect()->route('users.adoptions_index', ['id' => $request->user()->id])->with('is_after_complete', '完了しました');
+    }
+
+    public function detail($id)
+    {
+        $combo = Combo::find($id);
+        $data =[
+            'id' => $id,
+            'combo' => $combo,
+        ];
+        return view('combos.detail',$data);
+    }
+
+    public function update(Request $request)
+    {
+        $this->validate($request, [
+            'version' => 'required|string|',
+            'explain' => 'string|max:191|nullable|',
+            '動画' => 'string|max:191|nullable|regex:/(https?:\/\/(www\.)?[0-9a-z\-\.]+:?[0-9]{0,5})/|',
+            '一言コメント' => 'required|string|max:20|',
+            'ダメージ' => 'integer|nullable|digits_between:1,4',
+        ]);
+        
+        Combo::find($request->id)->update([
+            'version' => $request->version,
+            'explain' => $request->explain,
+            'video' => $request->動画,
+            'words' => $request->一言コメント,
+            'damage' => $request->ダメージ,
+        ]);
+
+        return redirect()->route('combos.detail', ['id' => $request->id])->with('is_after_complete', '完了しました');
     }
 
     public function destroy($id)

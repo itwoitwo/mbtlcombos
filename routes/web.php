@@ -48,7 +48,8 @@ Route::group(['prefix' => 'combos/{id}'], function () {
     Route::delete('unfavorite', 'FavoritesController@destroy')->name('favorites.unfavorite')->middleware('auth');
     Route::post('adopt', 'AdoptionsController@store')->name('adoptions.adopt')->middleware('auth');
     Route::delete('unadopt', 'AdoptionsController@destroy')->name('adoptions.unadopt')->middleware('auth');
-    Route::get('detail', 'CombosController@detail')->name('combos.detail');
+    Route::get('/', 'CombosController@detail')->name('combos.detail');
+    Route::post('update', 'CombosController@update')->name('combos.update')->middleware('auth');
 });
 
 Route::get('serch', 'SerchController@serch')->name('combos.serch');

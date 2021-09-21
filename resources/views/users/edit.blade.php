@@ -3,7 +3,6 @@
 {!! Form::open(['method' => 'post','route' => ['users.update', $user->id]]) !!}
     <div class="form-group col-md">
         <div class="form-group mb-2">
-            {!!Form::hidden('user_id', $user->id) !!}
             {!! Form::label('main_character', 'メインキャラ') !!}
                 {!! Form::select('main_character', [
                     '遠野志貴' => '遠野志貴',

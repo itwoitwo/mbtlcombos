@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -61,17 +62,18 @@ class UsersController extends Controller
     }
 
     public function update(Request $request)
-    {
+    {   
+        $id = Auth::id();
         $this->validate($request, [
             'main_character' => 'required|string|',
             'platform' => 'required|string|max:20|',
         ]);
         
-        User::find($request->user_id)->update([
+        User::find($id)->update([
             'main_character' => $request->main_character,
             'platform' => $request->platform,
         ]);
 
-        return redirect()->route('users.adoptions_index', ['id' => $request->user_id])->with('is_after_complete', '完了しました');
+        return redirect()->route('users.adoptions_index', ['id' => $id])->with('is_after_complete', '完了しました');
     }
 }   
