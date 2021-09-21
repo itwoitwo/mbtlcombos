@@ -6,7 +6,6 @@
     @include('commons.sidebar')
     <div class="col-md">
         @include('users.navtabs', ['user' => $user])
-        @include('combos.combos', ['combos' => $combos])
         <div class="card border-info">
             <div class="card-header bordere-bottom border-info">
                 検索フォーム
@@ -16,6 +15,7 @@
                 @include('combos.serch')
             {!! Form::close() !!}
         </div>
+        @include('combos.combos', ['combos' => $combos])
         <br>
         @include('combos.combo_annotation')
     </div>

@@ -32,7 +32,11 @@
             </div>
             <div class="row card-body py-1">
                 <div class="col-md">
+                    @if($combo->magic_circuit != 10)
                     マジックサーキット&nbsp;:&nbsp;{!! nl2br(e($combo->magic_circuit)) !!}本
+                    @else
+                    強制開放あり
+                    @endif
                 </div>
                 @if ($combo->moon != 10)
                 <div class="col-md">

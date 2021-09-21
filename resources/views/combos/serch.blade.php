@@ -1,68 +1,176 @@
 <div class="form-group">
     <div class="form-group row m-2">
+
         <div class="col-md-6 mb-2">
-            {!! Form::select('キャラクター', [
-                '' => 'キャラクターを選択',
-                '遠野志貴' => '遠野志貴',
-                'アルクェイド' => 'アルクェイド・ブリュンスタッド',
-                '遠野秋葉' => '遠野秋葉',
-                'シエル' => 'シエル',
-                '翡翠' => '翡翠',
-                '琥珀' => '琥珀',
-                '翡翠＆琥珀' =>'翡翠＆琥珀',
-                '軋間紅摩' => '軋間紅摩',
-                '有馬都古' => '有馬都古',
-                'ノエル' => 'ノエル',
-                'ロア' => 'ミハイル・ロア・バルダムヨォン',
-                'ヴローヴ' => 'ヴローヴ・アルハンゲリ',
-                ],'' ,['class' => 'form-control']) !!}
+            <select name="キャラクター" class="form-control">
+                <option value="" @if(isset($request)) @else selected @endif>キャラクターを選択</option>
+                <option value="遠野志貴"
+                    @if(isset($request))
+                        @if($request->キャラクター == '遠野志貴') selected  @endif 
+                    @endif>遠野志貴
+                </option>
+                <option value="アルクェイド"
+                    @if(isset($request))
+                        @if($request->キャラクター == 'アルクェイド') selected  @endif 
+                    @endif>アルクェイド
+                </option>
+                <option value="遠野秋葉"
+                    @if(isset($request))
+                        @if($request->キャラクター == '遠野秋葉') selected  @endif 
+                    @endif>遠野秋葉
+                </option>
+                <option value="シエル"
+                    @if(isset($request))
+                        @if($request->キャラクター == 'シエル') selected  @endif 
+                    @endif>シエル
+                </option>
+                <option value="翡翠"
+                    @if(isset($request))
+                        @if($request->キャラクター == '翡翠') selected  @endif 
+                    @endif>翡翠
+                </option>
+                <option value="琥珀"
+                    @if(isset($request))
+                        @if($request->キャラクター == '琥珀') selected  @endif 
+                    @endif>琥珀
+                </option>
+                <option value="軋間紅摩"
+                    @if(isset($request))
+                        @if($request->キャラクター == '軋間紅摩') selected  @endif 
+                    @endif>軋間紅摩
+                </option>
+                <option value="有馬都古"
+                    @if(isset($request))
+                        @if($request->キャラクター == '有馬都古') selected  @endif 
+                    @endif>有馬都古
+                </option>
+                <option value="ノエル"
+                    @if(isset($request))
+                        @if($request->キャラクター == 'ノエル') selected  @endif 
+                    @endif>ノエル
+                </option>
+                <option value="ロア"
+                    @if(isset($request))
+                        @if($request->キャラクター == 'ロア') selected  @endif 
+                    @endif>ロア
+                </option>
+                <option value="ヴローヴ"
+                    @if(isset($request))
+                        @if($request->キャラクター == 'ヴローヴ') selected  @endif 
+                    @endif>ヴローヴ
+                </option>
+                <option value="新キャラ"
+                    @if(isset($request))
+                        @if($request->キャラクター == '新キャラ') selected  @endif 
+                    @endif>新キャラ
+                </option>
+            </select>
         </div>
         <div class="col-md-3 mb-2">
-            {!! Form::select('version', [
-                '' => 'Ver. 指定無し',
-                '1.00' => 'Ver. 1.00',
-                '1.01' => 'Ver. 1.01',
-                ],'' ,['class' => 'form-control']) !!}
+            <select name="version" class="form-control">
+                <option value="" @if(isset($request)) @else selected @endif>Ver. 指定無し</option>
+                <option value="1.01"
+                    @if(isset($request))
+                        @if($request->version == '1.01') selected  @endif 
+                    @endif>Ver. 1.01
+                </option>
+                <option value="1.00"
+                    @if(isset($request))
+                        @if($request->version == '1.00') selected  @endif 
+                    @endif>Ver. 1.00
+                </option>
+            </select>
         </div>
         <div class="col-md-3 mb-2">
-            {!! Form::select('コンボ難易度', [
+            {{-- {!! Form::select('コンボ難易度', [
                 '' => '難易度指定無し',
                 'easy' => '簡単！安定！',
-                ],'' ,['class' => 'form-control']) !!}
+                ],'' ,['class' => 'form-control']) !!} --}}
+            <select name="コンボ難易度" class="form-control">
+                <option value="" @if(isset($request)) @else selected @endif>難易度指定無し</option>
+                <option value="easy"
+                    @if(isset($request))
+                        @if($request->コンボ難易度 == 'easy') selected  @endif 
+                    @endif>簡単！安定！
+                </option>
+            </select>
         </div>
     </div>
     <div class="form-group row m-2">
         <div class="col-md-3 mb-2">
-            {!! Form::select('状況', [
-                '' => 'どこでも',
-                '中央限定' => '中央限定',
-                '端' => '端限定',
-                '端背負い限定' => '端背負い限定',
-                'その他' => 'その他',
-                ],'' ,['class' => 'form-control']) !!}
+            <select name="状況" class="form-control">
+                <option value="" @if(isset($request)) @else selected @endif>どこでも</option>
+                <option value="中央限定"
+                    @if(isset($request))
+                        @if($request->状況 == '中央限定') selected  @endif 
+                    @endif>中央限定
+                </option>
+                <option value="端限定"
+                    @if(isset($request))
+                        @if($request->状況 == '端限定') selected  @endif 
+                    @endif>端限定
+                </option>
+                <option value="端背負い限定"
+                    @if(isset($request))
+                        @if($request->状況 == '端背負い限定') selected  @endif 
+                    @endif>端背負い限定
+                </option>
+                <option value="その他"
+                    @if(isset($request))
+                        @if($request->状況 == 'その他') selected  @endif 
+                    @endif>その他
+                </option>
+            </select>
         </div>                
         <div class="col-md-3 mb-2">
-            {!! Form::select('始動技', [
-                '' => '始動技を選択',
-                'A系統' => 'A系統',
-                'B系統' => 'B系統',
-                'C系統' => 'C系統',
-                '必殺技' => '必殺技',
-                'その他' => 'その他',
-                ],'' ,['class' => 'form-control']) !!}
+            <select name="始動技" class="form-control">
+                <option value="" @if(isset($request)) @else selected @endif>始動技を選択</option>
+                <option value="A系統"
+                    @if(isset($request))
+                        @if($request->始動技 == 'A系統') selected  @endif 
+                    @endif>A系統
+                </option>
+                <option value="B系統"
+                    @if(isset($request))
+                        @if($request->始動技 == 'B系統') selected  @endif 
+                    @endif>B系統
+                </option>
+                <option value="C系統"
+                    @if(isset($request))
+                        @if($request->始動技 == 'C系統') selected  @endif 
+                    @endif>C系統
+                </option>
+                <option value="その他"
+                    @if(isset($request))
+                        @if($request->始動技 == 'その他') selected  @endif 
+                    @endif>その他
+                </option>
+            </select>
         </div>
         <div class="col-md-3 mb-2">
-            {!! Form::select('counter_hit', [
-                '' => 'ノーマルヒット',
-                'カウンター限定' => 'カウンター限定',
-                'フェイタル限定' => 'フェイタル限定',
-                ],'' ,['class' => 'form-control']) !!}
+            <select name="counter_hit" class="form-control">
+                <option value="" @if(isset($request)) @else selected @endif>ノーマルヒット</option>
+                <option value="カウンター限定"
+                    @if(isset($request))
+                        @if($request->counter_hit == 'カウンター限定') selected  @endif 
+                    @endif>カウンター限定
+                </option>
+                <option value="フェイタル限定"
+                    @if(isset($request))
+                        @if($request->counter_hit == 'フェイタル限定') selected  @endif 
+                    @endif>フェイタル限定
+                </option>
+            </select>
         </div>
         <div class="col-md-3 mb-2">
-            {!! Form::select('video', [
-                '' => '動画指定無し',
-                'not_null' => '動画あり',
-                ],'' ,['class' => 'form-control']) !!}
+            <select name="video" class="form-control">
+                <option value="" @if(isset($request)) @else selected @endif>動画指定無し</option>
+                <option value="動画付きのみ"
+                    @if(isset($request))
+                        @if($request->video == '動画付きのみ') selected  @endif 
+                    @endif>動画付きのみ
+                </option>
+            </select>
         </div>
     </div>
     <div class="form-group row m-2">
@@ -70,23 +178,60 @@
             <div class="ml-1">
             {!! Form::label('magic_circuit', 'マジックサーキット') !!}
             </div>
-            {!! Form::select('magic_circuit', [
-                '' => 'ノーゲージ可',
-                1 => '1本',
-                2 => '2本',
-                3 => '3本',
-                4 => '4本',
-                ],'' ,['class' => 'form-control']) !!}
+            <select name="magic_circuit" class="form-control">
+                <option value="" @if(isset($request)) @else selected @endif>ノーゲージ可</option>
+                <option value="1"
+                    @if(isset($request))
+                        @if($request->magic_circuit == '1') selected  @endif 
+                    @endif>1本
+                </option>
+                <option value="2"
+                    @if(isset($request))
+                        @if($request->magic_circuit == '2') selected  @endif 
+                    @endif>2本
+                </option>
+                <option value="3"
+                    @if(isset($request))
+                        @if($request->magic_circuit == '3') selected  @endif 
+                    @endif>3本
+                </option>
+                <option value="4"
+                    @if(isset($request))
+                        @if($request->magic_circuit == '4') selected  @endif 
+                    @endif>4本
+                </option>
+                <option value="10"
+                @if(isset($request))
+                    @if($request->magic_circuit == '10') selected  @endif 
+                @endif>強制開放あり
+            </option>
+            </select>
         </div>
         <div class="form-group col-md-3 mb-2">
             <i class="fas fa-moon fa-flip-horizontal text-warning ml-1"></i>&nbsp;:&nbsp;{!! Form::label('moon', 'ムーンアイコン') !!}
-            {!! Form::select('moon', [
-                '' => 'ノーゲージ可',
-                1 => '1カウント',
-                2 => '2カウント',
-                3 => '3カウント',
-                10 => 'ムーンドライブ',
-                ],'' ,['class' => 'form-control']) !!}
+            <select name="moon" class="form-control">
+                <option value="" @if(isset($request)) @else selected @endif>ノーゲージ可</option>
+                <option value="1"
+                    @if(isset($request))
+                        @if($request->moon == '1') selected  @endif 
+                    @endif>1カウント
+                </option>
+                <option value="2"
+                    @if(isset($request))
+                        @if($request->moon == '2') selected  @endif 
+                    @endif>2カウント
+                </option>
+                <option value="3"
+                    @if(isset($request))
+                        @if($request->moon == '3') selected  @endif 
+                    @endif>3カウント
+                </option>
+                <option value="10"
+                    @if(isset($request))
+                        @if($request->moon == '10') selected  @endif 
+                    @endif>ムーンドライブ
+                </option>
+            </select>
         </div>
         <div class="form-group col-md mb-2 mx-2">
             {!! Form::label('serch', '　') !!}

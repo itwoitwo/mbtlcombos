@@ -38,9 +38,9 @@ Route::group(['prefix' => 'users/{id}'], function () {
     Route::get('favorites', 'UsersController@favorites')->name('users.favorites');
     Route::get('favorites_index', 'UsersController@favorites_index')->name('users.favorites_index');
     Route::get('mycombos', 'UsersController@mycombos')->name('users.mycombos_index');
-    Route::get('adoptions_serch', 'CombosController@adoptions_serch')->name('users.adoptions_serch');
-    Route::get('favorites_index_serch', 'CombosController@favorites_index_serch')->name('users.favorites_serch');
-    Route::get('mycombos_serch', 'CombosController@mycombos_serch')->name('users.mycombos_serch');
+    Route::get('adoptions_serch', 'SerchController@adoptions_serch')->name('users.adoptions_serch');
+    Route::get('favorites_index_serch', 'SerchController@favorites_index_serch')->name('users.favorites_serch');
+    Route::get('mycombos_serch', 'SerchController@mycombos_serch')->name('users.mycombos_serch');
 });
 
 Route::group(['prefix' => 'combos/{id}'], function () {
@@ -51,4 +51,4 @@ Route::group(['prefix' => 'combos/{id}'], function () {
     Route::get('detail', 'CombosController@detail')->name('combos.detail');
 });
 
-Route::get('serch', 'CombosController@serch')->name('combos.serch');
+Route::get('serch', 'SerchController@serch')->name('combos.serch');

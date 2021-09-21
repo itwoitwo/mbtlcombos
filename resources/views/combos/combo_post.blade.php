@@ -26,7 +26,7 @@
                     ],'' ,['class' => 'form-control']) !!}
             </div>
             <div class="col-md-3 mb-2">
-                {!! Form::select('version', ['1.00' => 'Ver. 1.00', '1.01' => 'Ver. 1.01'],'1.01' ,['class' => 'form-control']) !!}
+                {!! Form::select('version', ['1.01' => 'Ver. 1.01', '1.00' => 'Ver. 1.00'],'1.01' ,['class' => 'form-control']) !!}
             </div>
             <div class="col-md-3 mb-2">
                 {!! Form::select('コンボ難易度', ['' => 'コンボ難易度', 'easy' => '簡単！安定！', 'difficult' => '初心者向けではない'],'' ,['class' => 'form-control']) !!}
@@ -38,7 +38,7 @@
                     '' => '状況',
                     'どこでも' => 'どこでも',
                     '中央限定' => '中央限定',
-                    '端' => '端限定',
+                    '端限定' => '端限定',
                     '端背負い限定' => '端背負い限定',
                     'その他' => 'その他',
                     ],'' ,['class' => 'form-control']) !!}
@@ -70,6 +70,7 @@
                     2 => '2本',
                     3 => '3本',
                     4 => '4本',
+                    10 => '強制開放あり',
                     ],'' ,['class' => 'form-control']) !!}
             </div>
             <div class="form-group col-md-3 mb-2">
