@@ -18,6 +18,9 @@
                 @endif
                 <li class="breadcrumb-item">採用数&nbsp;<i class="bi bi-award-fill text-danger"></i>&nbsp;:&nbsp;{!! nl2br(e($combo->adoption_count)) !!}</li>
                 <li class="breadcrumb-item">お気に入り&nbsp;<i class="bi bi-star-fill text-warning"></i>&nbsp;:&nbsp;{!! nl2br(e($combo->favorite_count)) !!}</li>
+                <li class="breadcrumb-item">
+                    <a href="{{ route('users.adoptions_index', ['id' => $combo->user_id]) }}" class="text-dark"><i class="far fa-user text-primary"></i>&nbsp;{!! nl2br(e($combo->user_name)) !!}</a>
+                </li>
             </ul>
             <div class="row card-body py-1">
                 <div class="col-md">
@@ -60,23 +63,30 @@
                 {!! nl2br(e($combo->words)) !!}
             </div>
             <div class="mt-0 pt-0">
+                {{-- ボタン --}}
                 <div class="button-group mt-0 pt-0">
                     @if (Auth::check())
-                        <div class="btn mt-0 pt-0">
+                        <div class="btn mt-0 pt-0 pr-0">
                             @include("favorite_and_adopt.adopt_button")
                         </div>
-                        <div class="btn mt-0 pt-0">
+                        <div class="btn mt-0 pt-0 pr-0">
                             @include("favorite_and_adopt.favorite_button")
                         </div>
                         @if (Auth::id() == $combo->user_id)
-                        <div class="btn mt-0 pt-0">
-                            <a href="{{ route('combos.detail', ['id' => $combo->id]) }}" class="btn"><i class="far fa-edit"></i>編集</a>
+                        <div class="btn mt-0 pt-0 pr-0">
+                            <a href="{{ route('combos.detail', ['id' => $combo->id]) }}" class="btn"><i class="far fa-edit text-success"></i>編集</a>
                         </div>
                         @endif
                     @endif
                     @include("combos.combos_delete_button")
+
+                    <div class="btn mt-0 pt-0 pr-0">
+                        <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,タイプルミナ" target="blank_">
+                            <i class="fab fa-twitter text-primary"></i>&nbsp;ツイート
+                        </a>
+                    </div>
                     @if(isset($combo->explain) || isset($combo->video))
-                    <div class="btn mt-0 pt-0">
+                    <div class="btn mt-0 pt-0 pr-0">
                         <a class="btn" data-toggle="collapse" href="#collapse{{$combo->id}}" role="button" aria-expanded="false" aria-controls="collapse{{$combo->id}}">
                             <i class="far fa-file-alt text-primary"></i>&nbsp;詳細
                         </a>

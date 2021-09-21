@@ -1,5 +1,5 @@
 @if (Auth::id() == $combo->user_id)
-<div class="btn mt-0 pt-0">
+<div class="btn mt-0 pt-0 pr-0">
     <a class="btn" data-toggle="collapse" href="#collapseDel{{$combo->id}}" role="button" aria-expanded="false" aria-controls="collapseDel{{$combo->id}}">
         <i class="bi bi-trash"></i>&nbsp;削除
     </a>

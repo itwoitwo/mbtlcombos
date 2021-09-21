@@ -16,6 +16,7 @@ class CreateCombosTable extends Migration
         Schema::create('combos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->index();
+            $table->string('user_name');
             $table->string('fighter');
             $table->integer('damage')->nullable();
             $table->string('version');
@@ -30,6 +31,8 @@ class CreateCombosTable extends Migration
             $table->string('explain')->nullable();
             $table->string('video')->nullable();
             $table->timestamps();
+
+            $table->unique(['fighter','recipe']);
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->dropForeign('combos_user_id_foreign');

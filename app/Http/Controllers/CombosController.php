@@ -29,6 +29,7 @@ class CombosController extends Controller
 
     public function store(Request $request)
     {   
+        $fighter = $request->キャラクター;
         $this->validate($request, [
             'キャラクター' => 'required|string|',
             'ダメージ' => 'integer|nullable|digits_between:1,4',
@@ -38,14 +39,15 @@ class CombosController extends Controller
             '状況' => 'required|string|max:8|',
             'magic_circuit' => 'required|integer|',
             'moon' => 'required|integer|',
-            'コンボレシピ' => 'required|string|max:191|min:5|regex:/.>.+/|',
+            'コンボレシピ' => 'required|string|max:191|min:5|regex:/.>.+/|unique:combos,recipe,NULL,id,fighter,' . $fighter,
             'explain' => 'string|max:191|nullable|',
-            '動画' => 'string|max:191|nullable|regex:/(https?:\/\/(www\.)?[0-9a-z\-\.]+:?[0-9]{0,5})/|',
+            '動画' => 'string|max:191|nullable|url|',
             'コンボ難易度' => 'required|string|',
             '一言コメント' => 'required|string|max:20|',
         ]);
 
         $request->user()->combos()->create([
+            'user_name' => $request->user()->name,
             'fighter' => $request->キャラクター,
             'damage' => $request->ダメージ,
             'version' => $request->version,
@@ -79,7 +81,7 @@ class CombosController extends Controller
         $this->validate($request, [
             'version' => 'required|string|',
             'explain' => 'string|max:191|nullable|',
-            '動画' => 'string|max:191|nullable|regex:/(https?:\/\/(www\.)?[0-9a-z\-\.]+:?[0-9]{0,5})/|',
+            '動画' => 'string|max:191|nullable|url|',
             '一言コメント' => 'required|string|max:20|',
             'ダメージ' => 'integer|nullable|digits_between:1,4',
         ]);
