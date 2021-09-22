@@ -84,7 +84,7 @@
                         </div>
                         @if (Auth::id() == $combo->user_id)
                         <div class="btn mt-0 pt-0 pr-0">
-                            <a href="{{ route('combos.detail', ['id' => $combo->id]) }}" class="btn"><i class="far fa-edit text-success"></i>編集</a>
+                            <a href="{{ route('users.combos.detail', ['id' => $combo->id]) }}" class="btn"><i class="far fa-edit text-success"></i>編集</a>
                         </div>
                         @endif
                     @endif

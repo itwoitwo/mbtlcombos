@@ -86,15 +86,18 @@ class CombosController extends Controller
             'ダメージ' => 'integer|nullable|digits_between:1,4',
         ]);
         
-        Combo::find($request->id)->update([
-            'version' => $request->version,
-            'explain' => $request->explain,
-            'video' => $request->動画,
-            'words' => $request->タグ,
-            'damage' => $request->ダメージ,
-        ]);
+        $combo = Combo::find($request->id);
+        if (\Auth::id() === $combo->user_id){
+            $combo->update([
+                'version' => $request->version,
+                'explain' => $request->explain,
+                'video' => $request->動画,
+                'words' => $request->タグ,
+                'damage' => $request->ダメージ,
+            ]);
+        }
 
-        return redirect()->route('combos.detail', ['id' => $request->id])->with('is_after_complete', '完了しました');
+        return redirect()->route('users.combos.detail', ['id' => $request->id])->with('is_after_complete', '完了しました');
     }
 
     public function destroy($id)

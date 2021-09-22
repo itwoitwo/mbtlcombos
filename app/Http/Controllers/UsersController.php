@@ -66,7 +66,8 @@ class UsersController extends Controller
         $id = Auth::id();
         $this->validate($request, [
             'main_character' => 'required|string|',
-            'platform' => 'required|string|max:20|',
+            'platform' => 'required',
+            'platform.*' => ['string','regex:/[PS4]|[Switch]|[Steam]/'],
         ]);
         
         User::find($id)->update([

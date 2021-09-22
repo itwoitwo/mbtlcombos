@@ -4,5 +4,4 @@
 	if (is_after_complete) {
 			alert(is_after_complete);
 		}
-
 </script>

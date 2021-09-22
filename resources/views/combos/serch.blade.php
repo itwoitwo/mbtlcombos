@@ -1,6 +1,5 @@
 <div class="form-group">
     <div class="form-group row m-2">
-
         <div class="col-md-6 mb-2">
             <select name="キャラクター" class="form-control">
                 <option value="" @if(isset($request)) @else selected @endif>キャラクターを選択</option>
