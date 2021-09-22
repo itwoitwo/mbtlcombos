@@ -1,20 +1,17 @@
-{{-- @push('css')
-<link href="{{asset('css/sidebar.css')}}" rel="stylesheet">
-@endpush --}}
-
-<ul class="list-group col-md-3">
-	<li class="list-group-item {{ request()->route()->named('combos*') ? 'active' : '' }}"><a href="{{ route('combos.index') }}" class="link text-dark">コンボ検索</a></li>
+<div class="list-group col-md-3">
+	<a href="{{ route('combos.index') }}" class="list-group-item-primary list-group-item list-group-item-action {{ request()->route()->named('combos*') ? 'active' : '' }}">コンボ検索</a>
 	@if (Auth::check())
-	<li class="list-group-item {{ request()->route()->named('users*') ? 'active' : '' }}">
-		<a href="{{ route('users.adoptions_index', ['id' => Auth::user()->id]) }}" class="link text-dark">コンボ管理</a></li>
+		<a href="{{ route('users.adoptions_index', ['id' => Auth::user()->id]) }}" class="list-group-item-primary list-group-item list-group-item-action {{ request()->route()->named('users*') ? 'active' : '' }}">コンボ管理</a>
+		<a href="{{route('combo_post')}}" class="list-group-item-primary list-group-item list-group-item-action">コンボを投稿する</a>
 	@else
-	<li class="list-group-item">{!! link_to_route('signup.get', '登録してコンボを管理する', [], ['class' => 'link text-dark']) !!}</li>
+	<li class="list-group-item-primary list-group-item disabled">コンボ管理(会員のみ)</li>
+	<li class="list-group-item-primary list-group-item disabled">コンボを投稿する(会員のみ)</li>
+	<a href="{{ route('signup.get') }}" class="list-group-item-primary list-group-item list-group-item-action">登録してコンボを管理する</a>
 	@endif
-	<li class="list-group-item {{ request()->route()->named('about') ? 'active' : '' }}">
-		<a href="{{ route('about') }}" class="link text-dark">MBTLCombosとは？</a></li>
-	<li class="list-group-item"><a href="{{route('top_page')}}" class="link text-dark">トップに戻る</a></li>
+		<a href="{{ route('about') }}" class="list-group-item-primary list-group-item list-group-item-action {{ request()->route()->named('about') ? 'active' : '' }}">MBTLCombosとは？</a>
+	<a href="{{route('top_page')}}" class="list-group-item-primary list-group-item list-group-item-action">トップに戻る</a>
 	@if (isset($user))
 		<br>
 		@include('users.card')
 	@endif
-</ul>
+	</div>

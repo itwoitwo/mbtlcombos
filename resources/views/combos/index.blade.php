@@ -17,4 +17,5 @@
     @include('combos.combo_annotation')
     </div>
 </div>
+<br>
 @endsection

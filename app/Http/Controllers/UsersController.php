@@ -11,7 +11,7 @@ class UsersController extends Controller
     public function adoptions_index($id)
     {
         $user = User::find($id);
-        $combos = $user->adopts()->sortable()->orderBy('created_at', 'desc')->paginate(10);
+        $combos = $user->adopts()->sortable()->orderBy('created_at', 'desc')->paginate(5);
 
         $data = [
             'user' => $user,
@@ -27,7 +27,7 @@ class UsersController extends Controller
     public function favorites_index($id){
 
         $user = User::find($id);
-        $combos = $user->favorites()->sortable()->orderBy('created_at', 'desc')->paginate(10);
+        $combos = $user->favorites()->sortable()->orderBy('created_at', 'desc')->paginate(5);
 
         $data = [
             'user' =>$user,
@@ -40,7 +40,7 @@ class UsersController extends Controller
     public function mycombos($id){
 
         $user = User::find($id);
-        $combos = $user->combos()->sortable()->orderBy('created_at', 'desc')->paginate(10);
+        $combos = $user->combos()->sortable()->orderBy('created_at', 'desc')->paginate(5);
 
         $data = [
             'user' => $user,

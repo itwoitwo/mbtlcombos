@@ -59,7 +59,7 @@ class SerchController extends Controller
             $query->whereNotNull('video');
         }
 
-        $combos = $query->sortable()->orderBy('created_at', 'desc')->paginate(1);
+        $combos = $query->sortable()->orderBy('created_at', 'desc')->paginate(5);
 
         $user = \Auth::user();
         $data = [
@@ -126,7 +126,7 @@ class SerchController extends Controller
             $query->whereNotNull('video');
         }
 
-        $combos = $query->orderBy('created_at', 'desc')->paginate(10);
+        $combos = $query->orderBy('created_at', 'desc')->paginate(5);
 
         $user = User::find($request->user_id);
 
@@ -194,7 +194,7 @@ class SerchController extends Controller
             $query->whereNotNull('video');
         }
 
-        $combos = $query->orderBy('created_at', 'desc')->paginate(10);
+        $combos = $query->orderBy('created_at', 'desc')->paginate(5);
 
         $user = User::find($request->user_id);
 
@@ -261,7 +261,7 @@ class SerchController extends Controller
             $query->whereNotNull('video');
         }
 
-        $combos = $query->orderBy('created_at', 'desc')->paginate(10);
+        $combos = $query->orderBy('created_at', 'desc')->paginate(5);
 
         $user = User::find($request->user_id);
 

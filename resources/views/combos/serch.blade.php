@@ -82,10 +82,6 @@
             </select>
         </div>
         <div class="col-md-3 mb-2">
-            {{-- {!! Form::select('コンボ難易度', [
-                '' => '難易度指定無し',
-                'easy' => '簡単！安定！',
-                ],'' ,['class' => 'form-control']) !!} --}}
             <select name="コンボ難易度" class="form-control">
                 <option value="" @if(isset($request)) @else selected @endif>難易度指定無し</option>
                 <option value="easy"

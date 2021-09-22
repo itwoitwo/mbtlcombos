@@ -78,8 +78,8 @@
                     @endif
                     @if(isset($combo->video))
                     <div class="card card-body border-0">
-                    <a href='{{nl2br(e($combo->video))}}' target="_blank" rel="noopener">
-                        {{nl2br(e($combo->video))}}
+                    <a href='{!! nl2br(e($combo->video) !!)}' target="_blank" rel="noopener">
+                        {!! nl2br(e($combo->video)) !!}
                     </a> 
                     </div>
                     @else

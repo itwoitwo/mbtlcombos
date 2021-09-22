@@ -82,7 +82,7 @@
 
                     <div class="btn mt-0 pt-0 pr-0">
                         <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,タイプルミナ" target="blank_">
-                            <i class="fab fa-twitter text-primary"></i>&nbsp;ツイート
+                            <i class="fab fa-twitter text-primary"></i>&nbsp;Tweet
                         </a>
                     </div>
                     @if(isset($combo->explain) || isset($combo->video))

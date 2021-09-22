@@ -9,7 +9,7 @@
         <div class="col-md offset-4 mb-1">
             本当に削除しますか？
             {!! Form::open(['route' => ['combos.destroy', $combo->id], 'method' => 'delete']) !!}
-                {!! Form::button('削除する', ['class' => "btn btn-danger", 'type' => 'submit']) !!}
+                {!! Form::button('削除する', ['class' => "btn btn-danger ml-3", 'type' => 'submit']) !!}
             {!! Form::close() !!}
         </div>
     </div>
