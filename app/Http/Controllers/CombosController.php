@@ -43,7 +43,7 @@ class CombosController extends Controller
             'explain' => 'string|max:191|nullable|',
             '動画' => 'string|max:191|nullable|url|',
             'コンボ難易度' => 'required|string|',
-            '一言コメント' => 'required|string|max:20|',
+            'タグ' => 'required|string|max:30|',
         ]);
 
         $request->user()->combos()->create([
@@ -60,7 +60,7 @@ class CombosController extends Controller
             'explain' => $request->explain,
             'video' => $request->動画,
             'difficulty' => $request->コンボ難易度,
-            'words' => $request->一言コメント,
+            'words' => $request->タグ,
         ]);
     
         return redirect()->route('users.adoptions_index', ['id' => $request->user()->id])->with('is_after_complete', '完了しました');
@@ -82,7 +82,7 @@ class CombosController extends Controller
             'version' => 'required|string|',
             'explain' => 'string|max:191|nullable|',
             '動画' => 'string|max:191|nullable|url|',
-            '一言コメント' => 'required|string|max:20|',
+            'タグ' => 'required|string|max:20|',
             'ダメージ' => 'integer|nullable|digits_between:1,4',
         ]);
         
@@ -90,7 +90,7 @@ class CombosController extends Controller
             'version' => $request->version,
             'explain' => $request->explain,
             'video' => $request->動画,
-            'words' => $request->一言コメント,
+            'words' => $request->タグ,
             'damage' => $request->ダメージ,
         ]);
 

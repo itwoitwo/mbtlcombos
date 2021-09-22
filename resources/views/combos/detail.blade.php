@@ -78,7 +78,7 @@
                     @endif
                     @if(isset($combo->video))
                     <div class="card card-body border-0">
-                    <a href='{!! nl2br(e($combo->video) !!)}' target="_blank" rel="noopener">
+                    <a href='{!! nl2br(e($combo->video)) !!}' target="_blank" rel="noopener">
                         {!! nl2br(e($combo->video)) !!}
                     </a> 
                     </div>
@@ -108,8 +108,8 @@
             {!! Form::text('ダメージ',$combo->damage, ['class' => 'form-control col-md-3','placeholder' => 'ダメージを入力']) !!}
         </div>
         <div class="form-group mb-4 card-body">
-            {!! Form::label('一言コメント', '一言コメント（「確反」「ヒット確認簡単」「対空始動」など。最大20文字。）') !!}
-            {!! Form::text('一言コメント', $combo->words, ['class' => 'form-control']) !!}
+            {!! Form::label('タグ', 'タグ（「確反」「ヒット確認簡単」「対空始動」など。最大30文字。）') !!}
+            {!! Form::text('タグ', $combo->words, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group mb-4 card-body">
             {!! Form::label('explain', '備考（特殊な条件やコツなど）') !!}

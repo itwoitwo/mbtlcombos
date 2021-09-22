@@ -84,11 +84,22 @@
         <div class="col-md-3 mb-2">
             <select name="コンボ難易度" class="form-control">
                 <option value="" @if(isset($request)) @else selected @endif>難易度指定無し</option>
-                <option value="easy"
-                    @if(isset($request))
-                        @if($request->コンボ難易度 == 'easy') selected  @endif 
-                    @endif>簡単！安定！
-                </option>
+                <option value="簡単"
+                @if(isset($request))
+                        @if($request->コンボ難易度 == '簡単') selected  @endif 
+                    @endif>簡単！安定！</option>
+                <option value="普通"
+                @if(isset($request))
+                        @if($request->コンボ難易度 == '普通') selected  @endif 
+                    @endif>そこそこ</option>
+                <option value="難しい"
+                @if(isset($request))
+                        @if($request->コンボ難易度 == '難しい') selected  @endif 
+                    @endif>オタク向け</option>
+                <option value="魅せコン"
+                @if(isset($request))
+                        @if($request->コンボ難易度 == '魅せコン') selected  @endif 
+                    @endif>魅せコン</option>
             </select>
         </div>
     </div>
@@ -96,10 +107,10 @@
         <div class="col-md-3 mb-2">
             <select name="状況" class="form-control">
                 <option value="" @if(isset($request)) @else selected @endif>どこでも</option>
-                <option value="中央限定"
+                <option value="端以外"
                     @if(isset($request))
-                        @if($request->状況 == '中央限定') selected  @endif 
-                    @endif>中央限定
+                        @if($request->状況 == '端以外') selected  @endif 
+                    @endif>端以外
                 </option>
                 <option value="端限定"
                     @if(isset($request))
@@ -228,6 +239,10 @@
                     @endif>ムーンドライブ
                 </option>
             </select>
+        </div>
+        <div class="form-group col-md-3 mb-2">
+            {!! Form::label('タグ', ' タグ検索') !!}
+            <input class="form-control" id="タグ" placeholder="例：確反" name="タグ" type="text" @if(isset($request)) value="{{$request->タグ}}" @endif>
         </div>
         <div class="form-group col-md mb-2 mx-2">
             {!! Form::label('serch', '　') !!}

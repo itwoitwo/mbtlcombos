@@ -31,7 +31,7 @@
                 {!! Form::select('version', ['1.01' => 'Ver. 1.01', '1.00' => 'Ver. 1.00'],'1.01' ,['class' => 'form-control']) !!}
             </div>
             <div class="col-md-3 mb-2">
-                {!! Form::select('コンボ難易度', ['' => 'コンボ難易度', 'easy' => '簡単！安定！', 'difficult' => '初心者向けではない'],'' ,['class' => 'form-control']) !!}
+                {!! Form::select('コンボ難易度', ['' => 'コンボ難易度', '簡単' => '簡単！安定！', '普通' => 'そこそこ', '難しい' => 'オタク向け', '魅せコン' => '魅せコン'],'' ,['class' => 'form-control']) !!}
             </div>
         </div>
         <div class="form-group row">
@@ -39,7 +39,7 @@
                 {!! Form::select('状況', [
                     '' => '状況',
                     'どこでも' => 'どこでも',
-                    '中央限定' => '中央限定',
+                    '端以外' => '端以外',
                     '端限定' => '端限定',
                     '端背負い限定' => '端背負い限定',
                     'その他' => 'その他',
@@ -95,8 +95,8 @@
             {!! Form::textarea('コンボレシピ', old('コンボレシピ'), ['class' => 'form-control', 'rows' => '2']) !!}
         </div>
         <div class="form-group mb-4">
-            {!! Form::label('一言コメント', '一言コメント（「確反」「ヒット確認簡単」「対空始動」など。最大20文字。）') !!}
-            {!! Form::text('一言コメント', old('一言コメント'), ['class' => 'form-control']) !!}
+            {!! Form::label('タグ', 'タグ（確反、ヒット確認簡単、対空始動、などの検索しやすくなる情報。最大30文字。）') !!}
+            {!! Form::text('タグ', old('タグ'), ['class' => 'form-control']) !!}
         </div>
         <br>
         <br>

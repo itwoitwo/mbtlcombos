@@ -20,6 +20,8 @@ class SerchController extends Controller
         $serch_moon = $request->input('moon');
         $serch_difficulty = $request->input('コンボ難易度');
         $serch_video = $request->input('video');
+        $serch_words = $request->input('タグ') ?? '';
+        $pat = '%' . addcslashes($serch_words, '%_\\') . '%';
 
         if($request->has('キャラクター') && $serch_fighter != ''){
             $query->where('fighter', $serch_fighter);
@@ -51,12 +53,18 @@ class SerchController extends Controller
             $query->where('moon', $serch_moon);
         }
 
-        if($request->has('コンボ難易度') && $serch_difficulty != ''){
+        if($serch_difficulty == '普通'){
+            $query->where('difficulty', '簡単')->orWhere('difficulty', $serch_difficulty);
+        }elseif($request->has('コンボ難易度') && $serch_difficulty != ''){
             $query->where('difficulty', $serch_difficulty);
         }
 
         if($request->has('video') && $serch_video != ''){
             $query->whereNotNull('video');
+        }
+
+        if($request->has('タグ') && $serch_words != ''){
+            $query->where('words', 'LIKE', $pat);
         }
 
         $combos = $query->sortable()->orderBy('created_at', 'desc')->paginate(5);
@@ -87,6 +95,8 @@ class SerchController extends Controller
         $serch_moon = $request->input('moon');
         $serch_difficulty = $request->input('コンボ難易度');
         $serch_video = $request->input('video');
+        $serch_words = $request->input('タグ') ?? '';
+        $pat = '%' . addcslashes($serch_words, '%_\\') . '%';
 
         if($request->has('キャラクター') && $serch_fighter != ''){
             $query->where('fighter', $serch_fighter);
@@ -118,12 +128,18 @@ class SerchController extends Controller
             $query->where('moon', $serch_moon);
         }
 
-        if($request->has('コンボ難易度') && $serch_difficulty != ''){
+        if($serch_difficulty == '普通'){
+            $query->where('difficulty', '簡単')->orWhere('difficulty', $serch_difficulty);
+        }elseif($request->has('コンボ難易度') && $serch_difficulty != ''){
             $query->where('difficulty', $serch_difficulty);
         }
 
         if($request->has('video') && $serch_video != ''){
             $query->whereNotNull('video');
+        }
+
+        if($request->has('タグ') && $serch_words != ''){
+            $query->where('words', 'LIKE', $pat);
         }
 
         $combos = $query->orderBy('created_at', 'desc')->paginate(5);
@@ -155,6 +171,8 @@ class SerchController extends Controller
         $serch_moon = $request->input('moon');
         $serch_difficulty = $request->input('コンボ難易度');
         $serch_video = $request->input('video');
+        $serch_words = $request->input('タグ') ?? '';
+        $pat = '%' . addcslashes($serch_words, '%_\\') . '%';
 
         if($request->has('キャラクター') && $serch_fighter != ''){
             $query->where('fighter', $serch_fighter);
@@ -186,12 +204,18 @@ class SerchController extends Controller
             $query->where('moon', $serch_moon);
         }
 
-        if($request->has('コンボ難易度') && $serch_difficulty != ''){
+        if($serch_difficulty == '普通'){
+            $query->where('difficulty', '簡単')->orWhere('difficulty', $serch_difficulty);
+        }elseif($request->has('コンボ難易度') && $serch_difficulty != ''){
             $query->where('difficulty', $serch_difficulty);
         }
 
         if($request->has('video') && $serch_video != ''){
             $query->whereNotNull('video');
+        }
+
+        if($request->has('タグ') && $serch_words != ''){
+            $query->where('words', 'LIKE', $pat);
         }
 
         $combos = $query->orderBy('created_at', 'desc')->paginate(5);
@@ -222,6 +246,8 @@ class SerchController extends Controller
         $serch_moon = $request->input('moon');
         $serch_difficulty = $request->input('コンボ難易度');
         $serch_video = $request->input('video');
+        $serch_words = $request->input('タグ') ?? '';
+        $pat = '%' . addcslashes($serch_words, '%_\\') . '%';
 
         if($request->has('キャラクター') && $serch_fighter != ''){
             $query->where('fighter', $serch_fighter);
@@ -253,12 +279,18 @@ class SerchController extends Controller
             $query->where('moon', $serch_moon);
         }
 
-        if($request->has('コンボ難易度') && $serch_difficulty != ''){
+        if($serch_difficulty == '普通'){
+            $query->where('difficulty', '簡単')->orWhere('difficulty', $serch_difficulty);
+        }elseif($request->has('コンボ難易度') && $serch_difficulty != ''){
             $query->where('difficulty', $serch_difficulty);
         }
 
         if($request->has('video') && $serch_video != ''){
             $query->whereNotNull('video');
+        }
+
+        if($request->has('タグ') && $serch_words != ''){
+            $query->where('words', 'LIKE', $pat);
         }
 
         $combos = $query->orderBy('created_at', 'desc')->paginate(5);
