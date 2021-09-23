@@ -86,5 +86,5 @@
 <br>
 {!! link_to_route('combos.index','とりあえず使ってみる', [], ['class' => 'btn btn-lg btn-info mx-auto btn-block col-md-3']) !!}
 <br>
-{!! link_to_route('login', '登録する', [], ['class' => 'btn btn-lg btn-primary mx-auto btn-block col-md-3']) !!}
+{!! link_to_route('twitter', '登録する', [], ['class' => 'btn btn-lg btn-primary mx-auto btn-block col-md-3']) !!}
 @endsection

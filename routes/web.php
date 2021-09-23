@@ -54,3 +54,6 @@ Route::group(['prefix' => 'combos/{id}'], function () {
 });
 
 Route::get('serch', 'SerchController@serch')->name('combos.serch');
+
+Route::get('login/twitter', 'Auth\LoginController@redirectToProvider')->name('twitter');
+Route::get('login/twitter/callback', 'Auth\LoginController@handleProviderCallback');
