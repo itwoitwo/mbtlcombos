@@ -67,7 +67,7 @@ class SerchController extends Controller
             $query->where('words', 'LIKE', $pat);
         }
 
-        $combos = $query->sortable()->orderBy('created_at', 'desc')->paginate(5);
+        $combos = $query->sortable()->orderBy('created_at', 'desc')->paginate(10);
 
         $user = \Auth::user();
         $data = [
@@ -142,7 +142,7 @@ class SerchController extends Controller
             $query->where('words', 'LIKE', $pat);
         }
 
-        $combos = $query->orderBy('created_at', 'desc')->paginate(5);
+        $combos = $query->orderBy('created_at', 'desc')->paginate(10);
 
         $user = User::find($request->user_id);
 
@@ -231,7 +231,7 @@ class SerchController extends Controller
             $query->where('words', 'LIKE', $pat);
         }
 
-        $combos = $query->orderBy('created_at', 'desc')->paginate(5);
+        $combos = $query->orderBy('created_at', 'desc')->paginate(10);
 
         $user = User::find($request->user_id);
 
@@ -319,7 +319,7 @@ class SerchController extends Controller
             $query->where('words', 'LIKE', $pat);
         }
 
-        $combos = $query->orderBy('created_at', 'desc')->paginate(5);
+        $combos = $query->orderBy('created_at', 'desc')->paginate(10);
 
         $user = User::find($request->user_id);
 
