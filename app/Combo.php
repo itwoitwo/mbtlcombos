@@ -26,6 +26,7 @@ class Combo extends Model
         'video',
         'difficulty',
         'words',
+        'reported_count',
     ];
 
     public function user()

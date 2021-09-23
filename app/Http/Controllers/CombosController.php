@@ -111,6 +111,18 @@ class CombosController extends Controller
         return back();
     }
 
+    public function report($id)
+    {
+        $combo = Combo::find($id);
+        $reported_count = $combo->reported_count;
+        $reported_count += 1;
+        $combo->update([
+            'reported_count' => $reported_count,
+        ]);
+
+        return back()->with('is_after_complete', '完了しました');
+    }
+
     public function combo_post()
     {
         return view('combos.combo_post');

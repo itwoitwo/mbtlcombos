@@ -6,6 +6,9 @@
             <td>@sortablelink('damage', 'ダメージ')
             <td>@sortablelink('created_at', '作成日')
     </thead>
+    @if(count($combos) == 0)
+    <p>該当するコンボは0件です。</p>
+    @endif
     @foreach ($combos as $combo)
         <li class="card mb-3 mt-2">
             <ul class="breadcrumb mb-1 rounded-0 border-bottom">
@@ -83,8 +86,23 @@
                             @include("favorite_and_adopt.favorite_button")
                         </div>
                         @if (Auth::id() == $combo->user_id)
-                        <div class="btn mt-0 pt-0 pr-0">
-                            <a href="{{ route('users.combos.detail', ['id' => $combo->id]) }}" class="btn"><i class="far fa-edit text-success"></i>編集</a>
+                            <div class="btn mt-0 pt-0 pr-0">
+                                <a href="{{ route('users.combos.detail', ['id' => $combo->id]) }}" class="btn"><i class="far fa-edit text-success"></i>編集</a>
+                            </div>
+                        @else
+                            <div class="btn mt-0 pt-0 pr-0">
+                                <a class="btn" data-toggle="collapse" href="#collapseReport{{$combo->id}}" role="button" aria-expanded="false" aria-controls="collapseReport{{$combo->id}}">
+                                    <i class="fas fa-bullhorn fa-flip-horinzontal text-dark"></i>&nbsp;通報
+                                </a>
+                            </div>
+                            {{-- 展開領域 --}}
+                        <div class="collapse border-0" id="collapseReport{{$combo->id}}">
+                            <div class="col-md offset-4 mb-1">
+                                本当に通報しますか？
+                                {!! Form::open(['route' => ['combos.report', $combo->id], 'method' => 'post']) !!}
+                                    {!! Form::button('通報する', ['class' => "btn btn-danger ml-3", 'type' => 'submit']) !!}
+                                {!! Form::close() !!}
+                            </div>
                         </div>
                         @endif
                     @endif

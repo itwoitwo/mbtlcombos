@@ -50,6 +50,7 @@ Route::group(['prefix' => 'combos/{id}'], function () {
     Route::delete('unadopt', 'AdoptionsController@destroy')->name('adoptions.unadopt')->middleware('auth');
     Route::get('/', 'CombosController@detail')->name('users.combos.detail');
     Route::post('update', 'CombosController@update')->name('combos.update')->middleware('auth');
+    Route::post('report', 'CombosController@report')->name('combos.report')->middleware('auth');
 });
 
 Route::get('serch', 'SerchController@serch')->name('combos.serch');
