@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Socialite;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -17,6 +19,40 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
+
+    public function redirectToProvider()
+    {
+        return Socialite::driver('twitter')->redirect();
+    }
+
+    public function handleProviderCallback()
+    {
+        $userInfo = Socialite::driver('twitter')->user();
+
+        $user = User::find($userInfo->id);
+
+        if($user){
+            if($user->id_name != $userInfo->nickname 
+            || $user->name != $userInfo->name)
+                {   
+                    $user->id_name = $userInfo->nickname;
+                    $user->name = $userInfo->name;
+                    $user->save();
+                }
+        } else {
+        //ユーザー登録
+            User::create([
+                'id' => $userInfo->id,
+                'name' => $userInfo->name,
+                'id_name' => $userInfo->nickname,
+                ]);
+
+            $user = User::find($userInfo->id);
+        }
+
+        auth()->login($user, true);
+        return redirect()->to('/');
+    }
 
     use AuthenticatesUsers;
 

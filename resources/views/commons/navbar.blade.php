@@ -21,8 +21,7 @@
                         </ul>
                     </li>
                 @else
-                    <li class="nav-item">{!! link_to_route('signup.get', '登録', [], ['class' => 'nav-link']) !!}</li>
-                    <li class="nav-item">{!! link_to_route('login', 'ログイン', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('twitter', '登録/ログイン', [], ['class' => 'nav-link']) !!}</li>
                 @endif
             </ul>
         </div>

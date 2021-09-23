@@ -78,7 +78,7 @@
         『ＭＥＬＴＹ　ＢＬＯＯＤ：ＴＹＰＥ　ＬＵＭＩＮＡ』のコンボを収集、管理、共有するためのｗｅｂサービスです。<br>
         プレイヤーの皆様に投稿していただいたレシピを元に作られたデータベースから、充実した検索機能によって、他のプレイヤーが実戦でどんなコンボを採用しているのか調べたり、
         始動や状況別に一番減るコンボを探したりといった作業が自由自在！<br>
-        さらに、メールアドレス不要の簡単登録で自分が実戦で使うコンボを記録しておくことが可能に。ライバルに差をつけろ！
+        さらに、Twitter連携による登録で自分が実戦で使うコンボを記録しておくことが可能に。ライバルに差をつけろ！
         </p>
     </div>
     <p class="text-muted">※皆様からのコンボレシピの投稿が無ければ成り立ちません。特に発売初期は界隈を盛り上げるためにもぜひご協力ください。</p>
@@ -86,5 +86,5 @@
 <br>
 {!! link_to_route('combos.index','とりあえず使ってみる', [], ['class' => 'btn btn-lg btn-info mx-auto btn-block col-md-3']) !!}
 <br>
-{!! link_to_route('login', '登録する', [], ['class' => 'btn btn-lg btn-primary mx-auto btn-block col-md-3']) !!}
+{!! link_to_route('twitter', '登録/ログインする', [], ['class' => 'btn btn-lg btn-primary mx-auto btn-block col-md-3']) !!}
 @endsection
