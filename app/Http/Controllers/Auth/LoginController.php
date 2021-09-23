@@ -27,31 +27,36 @@ class LoginController extends Controller
 
     public function handleProviderCallback()
     {
-        $userInfo = Socialite::driver('twitter')->user();
-
-        $user = User::find($userInfo->id);
-
-        if($user){
-            if($user->id_name != $userInfo->nickname 
-            || $user->name != $userInfo->name)
-                {   
-                    $user->id_name = $userInfo->nickname;
-                    $user->name = $userInfo->name;
-                    $user->save();
-                }
-        } else {
-        //ユーザー登録
-            User::create([
-                'id' => $userInfo->id,
-                'name' => $userInfo->name,
-                'id_name' => $userInfo->nickname,
-                ]);
+        try {
+            $userInfo = Socialite::driver('twitter')->user();
 
             $user = User::find($userInfo->id);
-        }
 
-        auth()->login($user, true);
-        return redirect()->to('/');
+            if($user){
+                if($user->id_name != $userInfo->nickname 
+                || $user->name != $userInfo->name)
+                    {   
+                        $user->id_name = $userInfo->nickname;
+                        $user->name = $userInfo->name;
+                        $user->save();
+                    }
+            } else {
+            //ユーザー登録
+                User::create([
+                    'id' => $userInfo->id,
+                    'name' => $userInfo->name,
+                    'id_name' => $userInfo->nickname,
+                    ]);
+
+                $user = User::find($userInfo->id);
+            }
+
+            auth()->login($user, true);
+            return redirect()->to('/');
+        }
+        catch(\Exception $e) {
+            return redirect()->to('/');   // redirect url
+        }
     }
 
     use AuthenticatesUsers;
