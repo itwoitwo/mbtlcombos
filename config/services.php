@@ -31,9 +31,9 @@ return [
     ],
 
     'twitter' => [
-        'APIkey' => env('TWITTER_API_KEY'),
-        'APIsecret' => env('TWITTER_API_SECRET'),
-        'callBackUrl' => env('CALLBACK_URL'),        
+        'client_id' => env('TWITTER_API_KEY'),
+        'client_secret' => env('TWITTER_API_SECRET'),
+        'redirect' => env('CALLBACK_URL'),        
     ],
 
 ];
