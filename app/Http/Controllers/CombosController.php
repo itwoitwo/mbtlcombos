@@ -63,7 +63,7 @@ class CombosController extends Controller
             'words' => $request->タグ,
         ]);
     
-        return redirect()->route('users.adoptions_index', ['id' => $request->user()->id])->with('is_after_complete', '完了しました');
+        return redirect()->route('users.mycombos_index', ['id' => $request->user()->id])->with('is_after_complete', '完了しました');
     }
 
     public function detail($id)
