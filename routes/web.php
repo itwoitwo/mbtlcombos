@@ -18,10 +18,10 @@ Route::get('/', 'CombosController@welcome')->name('welcome');
 Route::get('top', 'CombosController@top_page')->name('top_page');
 Route::get('about', 'CombosController@about')->name('about');
 
-Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
-Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login')->name('login.post');
+// Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
+// Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
+// Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+// Route::post('login', 'Auth\LoginController@login')->name('login.post');
 // ログイン認証
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get')->middleware('auth');
 
