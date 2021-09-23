@@ -15,7 +15,7 @@
                         <ul class="dropdown-menu dropdown-menu-right">
                             <li class="dropdown-item">{!! link_to_route('combos.index', 'コンボ検索') !!}</li>
                             <li class="dropdown-item">{!! link_to_route('users.adoptions_index', 'コンボ管理', ['id' => Auth::id()]) !!}</li>
-                            <li class="dropdown-item">{!! link_to_route('combo_post', 'コンボ作成', ['id' => Auth::id()]) !!}</li>
+                            <li class="dropdown-item">{!! link_to_route('combo_post', 'コンボ投稿', ['id' => Auth::id()]) !!}</li>
                             <li class="dropdown-divider"></li>
                             <li class="dropdown-item">{!! link_to_route('logout.get', 'ログアウト') !!}</li>
                         </ul>

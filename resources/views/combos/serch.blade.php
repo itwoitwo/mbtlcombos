@@ -94,7 +94,7 @@
                 <option value="難しい"
                 @if(isset($request))
                         @if($request->コンボ難易度 == '難しい') selected  @endif 
-                    @endif>オタク向け</option>
+                    @endif>ベテラン向け</option>
                 <option value="魅せコン"
                 @if(isset($request))
                         @if($request->コンボ難易度 == '魅せコン') selected  @endif 
@@ -105,7 +105,12 @@
     <div class="form-group row m-2">
         <div class="col-md-3 mb-2">
             <select name="状況" class="form-control">
-                <option value="" @if(isset($request)) @else selected @endif>どこでも</option>
+                <option value="" @if(isset($request)) @else selected @endif>状況を選択</option>
+                <option value=""
+                    @if(isset($request))
+                        @if($request->状況 == 'どこでも') selected  @endif 
+                    @endif>どこでも
+                </option>
                 <option value="端以外"
                     @if(isset($request))
                         @if($request->状況 == '端以外') selected  @endif 
