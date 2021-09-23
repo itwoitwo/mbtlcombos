@@ -4,13 +4,16 @@
 <div class="low card-group">
     @include('commons.sidebar')
     <div class="col-md">
+        @if(count($users) == 0)
+        <p>該当するユーザーは0件です。</p>
+        @endif
         @foreach ($users as $user)
         <div class="card mb-2">
             <div class="card-header auth">
                 {{ $user->name }}<br>
             </div>
             <div class="card-body pb-1">
-                <p>メインキャラ : {{ $user->main_character }} 機種 : {{ str_replace('","',', ',mb_substr($user->platform, 2, -2)) }}
+                <p>メインキャラ : {{ $user->main_character }}　機種 : {{ str_replace('","',', ',mb_substr($user->platform, 2, -2)) }}　
                     <a href="{{ route('users.adoptions_index', ['id' => $user->id]) }}">{{ $user->name }}さんのページへ</a></p>
             </div>
         </div>
