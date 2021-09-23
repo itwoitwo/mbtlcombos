@@ -17,6 +17,10 @@
     <div class="card-body pb-1">
         <p>メインキャラ : {{ $user->main_character }}</p>
         <p>機種 : {{ str_replace('","',', ',mb_substr($user->platform, 2, -2)) }}</p>
+        <p>採用された数 : {{ $count_adopted }}</p>
+        <p>お気に入りされた数 : {{ $count_favorited }}</p>
+        <p>投稿したコンボ数 : {{ $count_combos }}
+        
     </div>
     <div class="card-body mt-0 pt-0 pr-0">
         <a class="" href="https://twitter.com/intent/tweet?url={{url('/')}}/users/{{$user->id}}&text=MBTLCombos {{$user->name}}さんのページ&hashtags=MBTLCombos,MBTL,メルブラ,タイプルミナ" target="blank_">

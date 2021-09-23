@@ -12,7 +12,7 @@
 	<a href="{{route('top_page')}}" class="list-group-item-primary list-group-item list-group-item-action">トップに戻る</a>
 	@if (isset($user))
 		<br>
-		@if(request()->route()->named('combos.index'))
+		@if(request()->route()->named('combos.*'))
 		@else
 		@include('users.card')
 		@endif

@@ -146,11 +146,24 @@ class SerchController extends Controller
 
         $user = User::find($request->user_id);
 
+        $countAdopted = 0;
+        $countFavorited = 0;
+        $countUserStatusCombos = $user->combos()->get();
+        
+        foreach($countUserStatusCombos as $countUserStatusCombo){
+            $countAdopted += $countUserStatusCombo->adoption_count;
+            $countFavorited += $countUserStatusCombo->favorite_count;
+        }
+
         $data = [
             'user' => $user,
             'combos' => $combos,
             'request' => $request,
+            'count_adopted' => $countAdopted,
+            'count_favorited' => $countFavorited,
         ];
+
+        $data += $this->counts($user);
 
         return view('users.adoptions_index', $data);
     }
@@ -222,11 +235,24 @@ class SerchController extends Controller
 
         $user = User::find($request->user_id);
 
+        $countAdopted = 0;
+        $countFavorited = 0;
+        $countUserStatusCombos = $user->combos()->get();
+        
+        foreach($countUserStatusCombos as $countUserStatusCombo){
+            $countAdopted += $countUserStatusCombo->adoption_count;
+            $countFavorited += $countUserStatusCombo->favorite_count;
+        }
+
         $data = [
             'user' => $user,
             'combos' => $combos,
             'request' => $request,
+            'count_adopted' => $countAdopted,
+            'count_favorited' => $countFavorited,
         ];
+
+        $data += $this->counts($user);
 
         return view('users.favorites_index', $data);
     }
@@ -297,11 +323,24 @@ class SerchController extends Controller
 
         $user = User::find($request->user_id);
 
+        $countAdopted = 0;
+        $countFavorited = 0;
+        $countUserStatusCombos = $user->combos()->get();
+        
+        foreach($countUserStatusCombos as $countUserStatusCombo){
+            $countAdopted += $countUserStatusCombo->adoption_count;
+            $countFavorited += $countUserStatusCombo->favorite_count;
+        }
+
         $data = [
             'user' => $user,
             'combos' => $combos,
             'request' => $request,
+            'count_adopted' => $countAdopted,
+            'count_favorited' => $countFavorited,
         ];
+
+        $data += $this->counts($user);
 
         return view('users.mycombos', $data);
     }

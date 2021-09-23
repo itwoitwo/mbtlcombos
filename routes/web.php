@@ -15,7 +15,7 @@ use App\Http\Controllers\CombosController;
 
 Route::get('combos_index', 'CombosController@index')->name('combos.index');
 Route::get('/', 'CombosController@welcome')->name('welcome');
-Route::get('top_page', 'CombosController@top_page')->name('top_page');
+Route::get('top', 'CombosController@top_page')->name('top_page');
 Route::get('about', 'CombosController@about')->name('about');
 
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
