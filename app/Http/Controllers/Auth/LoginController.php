@@ -30,6 +30,7 @@ class LoginController extends Controller
         $userInfo = Socialite::driver('twitter')->user();
 
         $user = User::find($userInfo->id);
+        dd($userInfo->id);
 
         if($user){
             if($user->id_name != $userInfo->nickname 
