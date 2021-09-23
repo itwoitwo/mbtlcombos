@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Combo;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
@@ -125,5 +126,25 @@ class UsersController extends Controller
         ]);
 
         return redirect()->route('users.adoptions_index', ['id' => $id])->with('is_after_complete', '完了しました');
+    }
+
+    public function user_serch(Request $request)
+    {
+        $query = User::query();
+        $serch_user = $request->input('user_name');
+        $pat = '%' . addcslashes($serch_user, '%_\\') . '%';
+
+        if($serch_user != ''){
+            $query->where('name', 'LIKE', $pat);
+        }
+
+        $users = $query->paginate(10);
+
+        $data = [
+            'users' => $users,
+            'old' => $request->$serch_user,
+        ];
+
+        return view('users.user_serch', $data);
     }
 }   

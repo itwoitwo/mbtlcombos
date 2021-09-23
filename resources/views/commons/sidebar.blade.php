@@ -17,4 +17,11 @@
 		@include('users.card')
 		@endif
 	@endif
+	<br>
+	<div class="">
+		{!! Form::open(['route' => 'users.serch', 'method' => 'get']) !!}
+			{!! Form::text('user_name','', ['class' => 'form-control rounded-0 border-bottom-0','placeholder' => 'ユーザー検索']) !!}
+			{!! Form::submit('検索する', ['class' => 'mb-2 col-md btn-light form-control border rounded-0 btn-block mx-auto']) !!}
+		{!! Form::close() !!}
 	</div>
+</div>

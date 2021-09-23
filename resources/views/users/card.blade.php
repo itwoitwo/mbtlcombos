@@ -20,7 +20,6 @@
         <p>採用された数 : {{ $count_adopted }}</p>
         <p>お気に入りされた数 : {{ $count_favorited }}</p>
         <p>投稿したコンボ数 : {{ $count_combos }}
-        
     </div>
     <div class="card-body mt-0 pt-0 pr-0">
         <a class="" href="https://twitter.com/intent/tweet?url={{url('/')}}/users/{{$user->id}}&text=MBTLCombos {{$user->name}}さんのページ&hashtags=MBTLCombos,MBTL,メルブラ,タイプルミナ" target="blank_">
