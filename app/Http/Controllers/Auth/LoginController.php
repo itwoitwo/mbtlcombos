@@ -28,8 +28,8 @@ class LoginController extends Controller
     public function handleProviderCallback()
     {
         $userInfo = Socialite::driver('twitter')->user();
-        dd($userInfo);
-        $user = User::find($userInfo->user['id']);
+
+        $user = User::find($userInfo->id);
 
         if($user){
             if($user->id_name != $userInfo->nickname 
