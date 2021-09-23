@@ -42,12 +42,12 @@ class LoginController extends Controller
         } else {
         //ユーザー登録
             User::create([
-                'id' => $userInfo->user['id'],
+                'id' => $userInfo->id,
                 'name' => $userInfo->name,
                 'id_name' => $userInfo->nickname,
                 ]);
 
-            $user = User::find($userInfo->user['id']);
+            $user = User::find($userInfo->id);
         }
 
         auth()->login($user, true);
