@@ -5,7 +5,7 @@
 @include('combos.combo_annotation')
 <br>
 <br>
-<span class="text-danger">ダメージ、解説、動画URLは必須ではありません。それ以外は必須となります。</span>
+<P class="text-danger">ダメージ、解説、動画URLは必須ではありません。それ以外は必須となります。</p>
 {!! Form::open(['route' => 'combos.store']) !!}
     <div class="form-group">
         <div class="form-group row">
