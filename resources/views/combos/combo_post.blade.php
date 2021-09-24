@@ -98,8 +98,10 @@
         </div>
         <br>
         <br>
+        <p class="text-danger">ダメージ、解説、動画URLは必須ではありません。それ以外は必須となります。</p>
+        <p>解説、動画URLは「詳細」をクリックで表示される部分になります。ダメージ未入力の場合、0が挿入されます。</p>
         <div class="form-group mb-4">
-            {!! Form::label('explain', '備考（特殊な条件やコツなど）　※ダメージ、備考、動画は空欄可') !!}
+            {!! Form::label('explain', '解説（特殊な条件やコツなど。最大200文字。）') !!}
             {!! Form::textarea('explain', old('explain'), ['class' => 'form-control', 'rows' => '2']) !!}
         </div>
         <div class="mb-2">
