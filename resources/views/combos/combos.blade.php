@@ -26,7 +26,7 @@
                 <li class="breadcrumb-item">
                     <i class="bi bi-moon-stars-fill text-danger"></i>
                 </li>
-            @endif
+                @endif
                 <li class="breadcrumb-item">採用数&nbsp;<i class="bi bi-award-fill text-danger"></i>&nbsp;:&nbsp;{!! nl2br(e($combo->adoption_count)) !!}</li>
                 <li class="breadcrumb-item">お気に入り&nbsp;<i class="bi bi-star-fill text-warning"></i>&nbsp;:&nbsp;{!! nl2br(e($combo->favorite_count)) !!}</li>
                 <li class="breadcrumb-item">

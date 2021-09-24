@@ -8,10 +8,20 @@
                 <ul class="breadcrumb mb-1 rounded-0 border-bottom">
                     <li class="breadcrumb-item">{!! nl2br(e($combo->fighter)) !!}</li>
                     <li class="breadcrumb-item"> Ver. {!! nl2br(e($combo->version)) !!}</li>
-                    @if($combo->difficulty === 'easy')
+                    @if($combo->difficulty === '簡単')
+                    <li class="breadcrumb-item">
+                        <i class="fas fa-seedling text-success"></i>
+                    </li>
+                    @endif
+                    @if($combo->difficulty === '難しい')
                         <li class="breadcrumb-item">
-                            <i class="fas fa-seedling text-success"></i>
+                            <i class="bi bi-joystick text-danger"></i>
                         </li>
+                    @endif
+                    @if($combo->difficulty === '魅せコン')
+                    <li class="breadcrumb-item">
+                        <i class="bi bi-moon-stars-fill text-danger"></i>
+                    </li>
                     @endif
                     <li class="breadcrumb-item">採用数&nbsp;<i class="bi bi-award-fill text-danger"></i>&nbsp;:&nbsp;{!! nl2br(e($combo->adoption_count)) !!}</li>
                     <li class="breadcrumb-item">お気に入り&nbsp;<i class="bi bi-star-fill text-warning"></i>&nbsp;:&nbsp;{!! nl2br(e($combo->favorite_count)) !!}</li>
