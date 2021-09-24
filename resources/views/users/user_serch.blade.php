@@ -16,6 +16,7 @@
             </div>
         </div>
         @endforeach
+        {{ $users->appends(request()->query())->links('pagination::bootstrap-4') }}
     </div>
 </div>
 @endsection
