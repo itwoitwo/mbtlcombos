@@ -58,10 +58,10 @@
                         @if($request->キャラクター == 'ヴローヴ') selected  @endif 
                     @endif>ヴローヴ
                 </option>
-                <option value="新キャラ"
+                <option value="暴走アルクェイド"
                     @if(isset($request))
-                        @if($request->キャラクター == '新キャラ') selected  @endif 
-                    @endif>新キャラ
+                        @if($request->キャラクター == '暴走アルクェイド') selected  @endif 
+                    @endif>暴走アルクェイド
                 </option>
             </select>
         </div>
