@@ -6,9 +6,7 @@
             <td>@sortablelink('damage', 'ダメージ')
             <td>@sortablelink('created_at', '作成日')
     </thead>
-    @if(count($combos) == 0)
-    <p>該当するコンボは0件です。</p>
-    @endif
+    <p>全{{count($combos)}}件がヒット</p>
     @foreach ($combos as $combo)
         <li class="card mb-3 mt-2">
             <ul class="breadcrumb mb-1 rounded-0 border-bottom">

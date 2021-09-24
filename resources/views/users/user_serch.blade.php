@@ -4,9 +4,7 @@
 <div class="low card-group">
     @include('commons.sidebar')
     <div class="col-md">
-        @if(count($users) == 0)
-        <p>該当するユーザーは0件です。</p>
-        @endif
+        <p>全{{count($users)}}件がヒット</p>
         @foreach ($users as $user)
         <div class="card mb-2">
             <div class="card-header auth">

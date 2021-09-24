@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="low col-md card-group">
-@include('commons.sidebar')
 <div class="col-md">
 @include('combos.combo_annotation')
 <br>
@@ -112,5 +110,4 @@
         </div>
     </div>
 {!! Form::close() !!}
-</div>
 @endsection
