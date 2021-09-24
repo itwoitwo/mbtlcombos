@@ -33,7 +33,7 @@
                 <p class="card-body">
                     検索フォームに指定した条件で絞り込み検索が出来ます。項目を組み合わせることで細かな条件で検索することが出来ます。<br>
                     また、各コンボには難しさに応じてマークがついており、<br>
-                    「簡単→<i class="fas fa-seedling text-success"></i>」「難しい→<i class="bi bi-joystick text-danger"></i>」「魅せコン→<i class="bi bi-moon-stars-fill text-danger"></i>」
+                    「簡単→<i class="fas fa-seedling text-success"></i>」「難しい→<i class="bi bi-joystick text-danger"></i>」「魅せコン→<i class="bi bi-moon-stars-fill text-primary"></i>」
                     という対応関係になっています。<br>
                     例：「キャラクター→アルクェイド」「難易度→簡単」「状況→端限定」とすると、<br>
                     アルクェイドの端限定の簡単なコンボが一覧で表示されます。さらにダメージで並び替えを実行し、一番威力の高いコンボを見つけたり、採用数で並べ替えて、人気があるコンボを見つけることが出来ます。<br>
