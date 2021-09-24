@@ -87,7 +87,7 @@ class CombosController extends Controller
             'version' => 'required|string|',
             'explain' => 'string|max:200|nullable|',
             '動画' => 'string|max:200|nullable|url|',
-            'タグ' => 'required|string|max:20|',
+            'タグ' => 'required|string|max:30|',
             'ダメージ' => 'integer|nullable|digits_between:1,4',
         ]);
         
