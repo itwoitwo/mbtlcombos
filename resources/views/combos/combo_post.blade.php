@@ -63,7 +63,7 @@
         </div>
         <div class="form-group row">
             <div class="form-group col-md-3 mb-2">
-                {!! Form::label('magic_circuit', 'マジックサーキット',['class => pr-0']) !!}
+                {!! Form::label('magic_circuit', 'マジックサーキット',['class' => 'pr-0']) !!}
                 {!! Form::select('magic_circuit', [
                     0 => 'ノーゲージ可',
                     1 => '1本',
