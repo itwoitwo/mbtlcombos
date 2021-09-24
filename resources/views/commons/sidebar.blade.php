@@ -6,7 +6,7 @@
 	@else
 	<li class="list-group-item-primary list-group-item disabled">コンボ管理(会員のみ)</li>
 	<li class="list-group-item-primary list-group-item disabled">コンボを投稿する(会員のみ)</li>
-	<a href="{{ route('twitter') }}" class="list-group-item-primary list-group-item list-group-item-action">登録する</a>
+	<a href="{{ route('twitter') }}" class="list-group-item-primary list-group-item list-group-item-action">登録/ログインする</a>
 	@endif
 		<a href="{{ route('about') }}" class="list-group-item-primary list-group-item list-group-item-action {{ request()->route()->named('about') ? 'active' : '' }}">MBTLCombosとは？</a>
 	<a href="{{route('top_page')}}" class="list-group-item-primary list-group-item list-group-item-action">トップに戻る</a>
