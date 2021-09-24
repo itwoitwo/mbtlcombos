@@ -69,14 +69,16 @@
                     メルブラもサイト制作も初心者。UNIでは黄色前後をウロウロしていた一般格ゲーマー。<br>
                     お問い合わせはリプかDMで。
                 </p>
-                {{-- <h2 class="card-header border-top topic">当サイトに掲載されている広告について</h2>
+                <h2 class="card-header border-top topic">当サイトに掲載されている広告について</h2>
+
+                <p class="card-body my-0 pb-0">今後第三者配信の広告サービスが導入される可能性があります。ご了承ください。</p>
                 
-                <p class="card-body my-0 pb-0">当サイトでは、第三者配信の広告サービス（Googleアドセンス）を利用しており、ユーザーの興味に応じた商品やサービスの広告を表示するため、クッキー（Cookie）を使用しております。
+                {{-- <p class="card-body my-0 pb-0">当サイトでは、第三者配信の広告サービス（Googleアドセンス）を利用しており、ユーザーの興味に応じた商品やサービスの広告を表示するため、クッキー（Cookie）を使用しております。
                     クッキーを使用することで当サイトはお客様のコンピュータを識別できるようになりますが、お客様個人を特定できるものではありません。
                     
                     Cookieを無効にする方法やGoogleアドセンスに関する詳細は、<a target="_blank" href="http://www.google.co.jp/policies/technologies/ads/">こちら</a>をクリックしてください。</p>
-                <p class="card-body my-0">MBTLCombosは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。』</p>
-                 --}}
+                <p class="card-body my-0">MBTLCombosは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。』</p> --}}
+                
                 <h2 class="card-header topic">利用規約</h2>
                 <div class="card-body">
                     <h6>利用規約</h6>

@@ -19,8 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('main_character')->default('Unknown');
             $table->string('platform')->default('--Unknown--');
-            $table->string('network_color')->default('Unknown');
-            $table->string('introduce')->default('Unknown');
             $table->rememberToken();
             $table->timestamps();
         });
