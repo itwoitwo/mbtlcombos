@@ -54,6 +54,7 @@
         <link rel="icon" type="image/png" sizes="24x24" href="/icon-24x24.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png">
         <link rel="manifest" href="/manifest.json">
+        <script data-ad-client="ca-pub-8705074607112164" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         @stack('css')
     </head>
 
