@@ -24,4 +24,17 @@
 			{!! Form::submit('検索する', ['class' => 'mb-2 col-md btn-light form-control border rounded-0 btn-block mx-auto']) !!}
 		{!! Form::close() !!}
 	</div>
+	<br>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8705074607112164"
+     crossorigin="anonymous"></script>
+	<!-- サイドバー -->
+	<ins class="adsbygoogle"
+		style="display:block"
+		data-ad-client="ca-pub-8705074607112164"
+		data-ad-slot="6845112048"
+		data-ad-format="auto"
+		data-full-width-responsive="true"></ins>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
 </div>
