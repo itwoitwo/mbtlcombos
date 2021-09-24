@@ -138,7 +138,7 @@ class UsersController extends Controller
             $query->where('name', 'LIKE', $pat);
         }
 
-        $users = $query->paginate(10);
+        $users = $query->paginate(1);
 
         $data = [
             'users' => $users,
