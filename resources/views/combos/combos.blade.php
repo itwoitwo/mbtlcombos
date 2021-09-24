@@ -24,7 +24,7 @@
                 @endif
                 @if($combo->difficulty === '魅せコン')
                 <li class="breadcrumb-item">
-                    <i class="bi bi-moon-stars-fill text-danger"></i>
+                    <i class="bi bi-moon-stars-fill text-primary"></i>
                 </li>
                 @endif
                 <li class="breadcrumb-item">採用数&nbsp;<i class="bi bi-award-fill text-danger"></i>&nbsp;:&nbsp;{!! nl2br(e($combo->adoption_count)) !!}</li>
