@@ -5,9 +5,8 @@
     @include('commons.sidebar')
     <div class="col-md">
         <div class="row card">
-            <h2 class="card-header topic">利用規約</h2>
+            <h2 class="card-header topic">お知らせ</h2>
             <div class="card-body">
-                <h6>お知らせ/更新情報</h6>
                 <ul>
                     <li>9/25:サービス開始</li>
                 </ul>
