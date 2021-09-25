@@ -58,3 +58,4 @@ Route::get('user_serch', 'UsersController@user_serch')->name('users.serch');
 
 Route::get('login/twitter', 'Auth\LoginController@redirectToProvider')->name('twitter');
 Route::get('login/twitter/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('about/rules', 'CombosController@rulues')->name('about.rules');
