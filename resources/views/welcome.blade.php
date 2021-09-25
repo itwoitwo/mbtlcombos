@@ -87,4 +87,8 @@
 {!! link_to_route('combos.index','とりあえず使ってみる', [], ['class' => 'btn btn-lg btn-info mx-auto btn-block col-md-3']) !!}
 <br>
 {!! link_to_route('twitter', '登録/ログインする', [], ['class' => 'btn btn-lg btn-primary mx-auto btn-block col-md-3']) !!}
+<br>
+<a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}&text=MBTLCombos メルブラのコンボを調べるならココ！&hashtags=MBTLCombos,MBTL,メルブラ,タイプルミナ" target="blank_">
+    <i class="fab fa-twitter text-primary"></i>&nbsp;Tweet
+</a>
 @endsection
