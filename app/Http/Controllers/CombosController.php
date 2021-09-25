@@ -156,4 +156,9 @@ class CombosController extends Controller
     {
         return view('commons.about');
     }
+
+    public function rulues()
+    {
+        return view('commons.rules');
+    }
 }

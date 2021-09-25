@@ -8,7 +8,7 @@
 	<li class="list-group-item-primary list-group-item disabled">コンボを投稿する(会員のみ)</li>
 	<a href="{{ route('twitter') }}" class="list-group-item-primary list-group-item list-group-item-action">登録/ログインする</a>
 	@endif
-		<a href="{{ route('about') }}" class="list-group-item-primary list-group-item list-group-item-action {{ request()->route()->named('about') ? 'active' : '' }}">MBTLCombosとは？</a>
+		<a href="{{ route('about') }}" class="list-group-item-primary list-group-item list-group-item-action {{ request()->route()->named('about*') ? 'active' : '' }}">MBTLCombosとは？</a>
 	<a href="{{route('top_page')}}" class="list-group-item-primary list-group-item list-group-item-action">トップに戻る</a>
 	@if (isset($user))
 		<br>
@@ -25,7 +25,7 @@
 		{!! Form::close() !!}
 	</div>
 	<br>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8705074607112164"
+	{{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8705074607112164"
      crossorigin="anonymous"></script>
 	<!-- サイドバー -->
 	<ins class="adsbygoogle"
@@ -36,5 +36,5 @@
 		data-full-width-responsive="true"></ins>
 	<script>
 		(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
+	</script> --}}
 </div>
