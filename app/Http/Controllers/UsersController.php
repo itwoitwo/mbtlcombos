@@ -43,6 +43,9 @@ class UsersController extends Controller
     public function favorites_index($id){
 
         $user = User::find($id);
+        if($user == null){
+            return redirect()->route('top_page');
+        }
         $count_hits = count($user->favorites()->get());
         $combos = $user->favorites()->sortable()->orderBy('created_at', 'desc')->paginate(10);
 
@@ -71,6 +74,9 @@ class UsersController extends Controller
     public function mycombos($id){
 
         $user = User::find($id);
+        if($user == null){
+            return redirect()->route('top_page');
+        }
         $count_hits = count($user->combos()->get());
         $combos = $user->combos()->sortable()->orderBy('created_at', 'desc')->paginate(10);
 
@@ -96,9 +102,12 @@ class UsersController extends Controller
         return view('users.mycombos', $data);
     }
 
-    public function edit($id)
+    public function edit()
     {   
-        $user = User::find($id);
+        $user = Auth::User();
+        if($user == null){
+            return redirect()->route('top_page');
+        }
 
         $countAdopted = 0;
         $countFavorited = 0;
