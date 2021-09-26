@@ -13,7 +13,7 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         if($user == null){
-            return redirect()->route('top_page');
+            return view('errors.404');
         }
         $count_hits = count($combos = $user->adopts()->get());
         $combos = $user->adopts()->sortable()->orderBy('created_at', 'desc')->paginate(10);
