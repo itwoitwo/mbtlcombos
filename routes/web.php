@@ -42,7 +42,7 @@ Route::group(['prefix' => 'users/{id}'], function () {
     Route::get('mycombos_serch', 'SerchController@mycombos_serch')->name('users.mycombos_serch');
 });
 
-Route::get('users/edit','UsersController@edit')->name('users.edit')->middleware('auth');
+Route::get('user_edit','UsersController@edit')->name('users.edit')->middleware('auth');
 
 Route::group(['prefix' => 'combos/{id}'], function () {
     Route::post('favorite', 'FavoritesController@store')->name('favorites.favorite')->middleware('auth');
