@@ -4,7 +4,7 @@
 <div class="low card-group">
     @include('commons.sidebar')
     <div class="col-md">
-        <p>全{{count($users)}}件がヒット</p>
+        <p>全{{$count_users_hits}}件がヒット</p>
         @foreach ($users as $user)
         <div class="card mb-2">
             <div class="card-header auth">

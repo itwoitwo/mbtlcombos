@@ -16,12 +16,14 @@ class CombosController extends Controller
     public function index()
     {
         $combos = Combo::all();
+        $count_hits = count($combos);
         $combos = Combo::sortable()->orderBy('created_at', 'desc')->paginate(10);
         $user = \Auth::user();
 
         $data = [
             'user' => $user,
             'combos' => $combos,
+            'count_hits' => $count_hits,
         ];
 
         return view('combos.index', $data);
