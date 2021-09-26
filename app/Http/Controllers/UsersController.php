@@ -138,11 +138,13 @@ class UsersController extends Controller
             $query->where('name', 'LIKE', $pat);
         }
 
-        $users = $query->paginate(10);
+        $count_users_hits = count($query->get());
+        $users = $query->orderBy('created_at', 'desc')->paginate(10);
 
         $data = [
             'users' => $users,
             'old' => $request->$serch_user,
+            'count_users_hits' => $count_users_hits,
         ];
 
         return view('users.user_serch', $data);

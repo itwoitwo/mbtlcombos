@@ -66,7 +66,8 @@ class SerchController extends Controller
         if($request->has('タグ') && $serch_words != ''){
             $query->where('words', 'LIKE', $pat);
         }
-
+        
+        $count_hits = count($query->get());
         $combos = $query->sortable()->orderBy('created_at', 'desc')->paginate(10);
 
         $user = \Auth::user();
@@ -74,6 +75,7 @@ class SerchController extends Controller
             'user' => $user,
             'combos' => $combos,
             'request' => $request,
+            'count_hits' => $count_hits,
         ];
 
         return view('combos.index', $data);
@@ -142,6 +144,7 @@ class SerchController extends Controller
             $query->where('words', 'LIKE', $pat);
         }
 
+        $count_hits = count($query->get());
         $combos = $query->orderBy('created_at', 'desc')->paginate(10);
 
         $user = User::find($request->user_id);
@@ -161,6 +164,7 @@ class SerchController extends Controller
             'request' => $request,
             'count_adopted' => $countAdopted,
             'count_favorited' => $countFavorited,
+            'count_hits' => $count_hits,
         ];
 
         $data += $this->counts($user);
@@ -231,6 +235,7 @@ class SerchController extends Controller
             $query->where('words', 'LIKE', $pat);
         }
 
+        $count_hits = count($query->get());
         $combos = $query->orderBy('created_at', 'desc')->paginate(10);
 
         $user = User::find($request->user_id);
@@ -250,6 +255,7 @@ class SerchController extends Controller
             'request' => $request,
             'count_adopted' => $countAdopted,
             'count_favorited' => $countFavorited,
+            'count_hits' => $count_hits,
         ];
 
         $data += $this->counts($user);
@@ -319,6 +325,7 @@ class SerchController extends Controller
             $query->where('words', 'LIKE', $pat);
         }
 
+        $count_hits = count($query->get());
         $combos = $query->orderBy('created_at', 'desc')->paginate(10);
 
         $user = User::find($request->user_id);
@@ -338,6 +345,7 @@ class SerchController extends Controller
             'request' => $request,
             'count_adopted' => $countAdopted,
             'count_favorited' => $countFavorited,
+            'count_hits' => $count_hits,
         ];
 
         $data += $this->counts($user);
