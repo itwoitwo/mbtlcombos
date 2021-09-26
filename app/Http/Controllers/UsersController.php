@@ -12,6 +12,7 @@ class UsersController extends Controller
     public function adoptions_index($id)
     {
         $user = User::find($id);
+        $count_hits = count($combos = $user->adopts());
         $combos = $user->adopts()->sortable()->orderBy('created_at', 'desc')->paginate(10);
 
         $countAdopted = 0;
@@ -28,6 +29,7 @@ class UsersController extends Controller
             'combos' => $combos,
             'count_adopted' => $countAdopted,
             'count_favorited' => $countFavorited,
+            'count_hits' => $count_hits,
         ];
 
         $data += $this->counts($user);
@@ -38,6 +40,7 @@ class UsersController extends Controller
     public function favorites_index($id){
 
         $user = User::find($id);
+        $count_hits = count($user->favorites());
         $combos = $user->favorites()->sortable()->orderBy('created_at', 'desc')->paginate(10);
 
         $countAdopted = 0;
@@ -54,6 +57,7 @@ class UsersController extends Controller
             'combos' => $combos,
             'count_adopted' => $countAdopted,
             'count_favorited' => $countFavorited,
+            'count_hits' => $count_hits,
         ];
 
         $data += $this->counts($user);
@@ -64,6 +68,7 @@ class UsersController extends Controller
     public function mycombos($id){
 
         $user = User::find($id);
+        $count_hits = count($user->combos());
         $combos = $user->combos()->sortable()->orderBy('created_at', 'desc')->paginate(10);
 
         $countAdopted = 0;
@@ -80,6 +85,7 @@ class UsersController extends Controller
             'combos' => $combos,
             'count_adopted' => $countAdopted,
             'count_favorited' => $countFavorited,
+            'count_hits' => $count_hits,
         ];
 
         $data += $this->counts($user);
