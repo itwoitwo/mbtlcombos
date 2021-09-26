@@ -32,7 +32,6 @@ Route::get('combo_post', 'CombosController@combo_post')->name('combo_post')->mid
 Route::group(['prefix' => 'users/{id}'], function () {
     Route::get('/', 'UsersController@adoptions_index')->name('users.adoptions_index');
     // ログイン認証
-    Route::get('edit','UsersController@edit')->name('users.edit')->middleware('auth');
     Route::post('update', 'UsersController@update')->name('users.update')->middleware('auth');
 
     Route::get('favorites', 'UsersController@favorites')->name('users.favorites');
@@ -42,6 +41,8 @@ Route::group(['prefix' => 'users/{id}'], function () {
     Route::get('favorites_index_serch', 'SerchController@favorites_index_serch')->name('users.favorites_serch');
     Route::get('mycombos_serch', 'SerchController@mycombos_serch')->name('users.mycombos_serch');
 });
+
+Route::get('user_edit','UsersController@edit')->name('users.edit')->middleware('auth');
 
 Route::group(['prefix' => 'combos/{id}'], function () {
     Route::post('favorite', 'FavoritesController@store')->name('favorites.favorite')->middleware('auth');

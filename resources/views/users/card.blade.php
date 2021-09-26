@@ -29,7 +29,7 @@
     @if(Auth::check())
         @if (Auth::user()->id === $user->id)
         <div class="card-footer py-1">
-            <a href="{{ route('users.edit', ['id' => $user->id]) }}" class="link">編集</a>
+            <a href="{{ route('users.edit') }}" class="link">編集</a>
         </div>
         @endif
     @endif

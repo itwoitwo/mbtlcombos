@@ -76,6 +76,9 @@ class CombosController extends Controller
     public function detail($id)
     {
         $combo = Combo::find($id);
+        if($combo == null){
+            return \App::abort(404);
+        }
         $data =[
             'id' => $id,
             'combo' => $combo,
