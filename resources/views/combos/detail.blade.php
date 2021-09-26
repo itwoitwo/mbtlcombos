@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-@if(isset($combo))
 @include('commons.flash_message')
 <div class="low card-group">
     @include('commons.sidebar')
@@ -193,7 +192,4 @@
         @endif
     </div>
 </div>
-@else
-<p>お探しのコンボは存在しないか削除された可能性があります。</p>
-@endif
 @endsection
