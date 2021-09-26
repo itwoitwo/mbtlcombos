@@ -67,17 +67,67 @@
                     {!! nl2br(e($combo->words)) !!}
                 </div>
                 <div class="mt-0 pt-0">
+                    {{-- ボタン --}}
                     <div class="button-group mt-0 pt-0">
                         @if (Auth::check())
-                            <div class="btn mt-0 pt-0">
+                            <div class="btn mt-0 pt-0 pr-0">
                                 @include("favorite_and_adopt.adopt_button")
                             </div>
-                            <div class="btn mt-0 pt-0">
+                            <div class="btn mt-0 pt-0 pr-0">
                                 @include("favorite_and_adopt.favorite_button")
                             </div>
+                            @if (Auth::id() == $combo->user_id)
+                            @else
+                                <div class="btn mt-0 pt-0 pr-0">
+                                    <a class="btn" data-toggle="collapse" href="#collapseReport{{$combo->id}}" role="button" aria-expanded="false" aria-controls="collapseReport{{$combo->id}}">
+                                        <i class="fas fa-bullhorn fa-flip-horinzontal text-dark"></i>&nbsp;通報
+                                    </a>
+                                </div>
+                                {{-- 展開領域 --}}
+                            <div class="collapse border-0" id="collapseReport{{$combo->id}}">
+                                <div class="col-md offset-4 mb-1">
+                                    本当に通報しますか？
+                                    {!! Form::open(['route' => ['combos.report', $combo->id], 'method' => 'post']) !!}
+                                        {!! Form::button('通報する', ['class' => "btn btn-danger ml-3", 'type' => 'submit']) !!}
+                                    {!! Form::close() !!}
+                                </div>
+                            </div>
+                            @endif
                         @endif
+                        <div class="btn mt-0 pt-0 pr-0">
+                            {{-- ハッシュタグ分岐 --}}
+                            @if($combo->fighter == '遠野志貴')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_SH" target="blank_">
+                            @elseif ($combo->fighter == 'アルクェイド')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_AR" target="blank_">
+                            @elseif ($combo->fighter == '遠野秋葉')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_AK" target="blank_">
+                            @elseif ($combo->fighter == 'シエル')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_CI" target="blank_">
+                            @elseif ($combo->fighter == '翡翠')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_HI" target="blank_">
+                            @elseif ($combo->fighter == '琥珀')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_KO" target="blank_">
+                            @elseif ($combo->fighter == '翡翠＆琥珀')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_KI" target="blank_">
+                            @elseif ($combo->fighter == '軋間紅摩')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_KI" target="blank_">
+                            @elseif ($combo->fighter == '有馬都古')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_MI" target="blank_">
+                            @elseif ($combo->fighter == 'ノエル')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_NO" target="blank_">
+                            @elseif ($combo->fighter == 'ロア')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_RO" target="blank_">
+                            @elseif ($combo->fighter == 'ヴローヴ')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_VL" target="blank_">
+                            @elseif ($combo->fighter == '暴走アルクェイド')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_RE" target="blank_">
+                            @endif    
+                            <i class="fab fa-twitter text-primary"></i>&nbsp;Tweet
+                        </a>
+                        </div>
                         @if(isset($combo->explain) || isset($combo->video))
-                        <div class="btn mt-0 pt-0">
+                        <div class="btn mt-0 pt-0 pr-0">
                             <a class="btn" data-toggle="collapse" href="#collapse{{$combo->id}}" role="button" aria-expanded="false" aria-controls="collapse{{$combo->id}}">
                                 <i class="far fa-file-alt text-primary"></i>&nbsp;詳細
                             </a>
@@ -92,8 +142,8 @@
                                 @endif
                                 @if(isset($combo->video))
                                 <div class="card card-body border-0">
-                                <a href='{!! nl2br(e($combo->video)) !!}' target="_blank" rel="noopener">
-                                    {!! nl2br(e($combo->video)) !!}
+                                <a href='{{nl2br(e($combo->video))}}' target="_blank" rel="noopener">
+                                    {{nl2br(e($combo->video))}}
                                 </a> 
                                 </div>
                                 @else
