@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-@if(isset($user))
 @include('commons.flash_message')
 <div class="low col-md card-group">
     @include('commons.sidebar')
@@ -22,7 +21,4 @@
     </div>
 </div>
 <br>
-@else
-<p>お探しのユーザーは存在しないか、削除された可能性があります。</p>
-@endif
 @endsection

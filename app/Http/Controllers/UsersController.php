@@ -12,6 +12,9 @@ class UsersController extends Controller
     public function adoptions_index($id)
     {
         $user = User::find($id);
+        if($user == null){
+            return redirect()->route('top_page');
+        }
         $count_hits = count($combos = $user->adopts()->get());
         $combos = $user->adopts()->sortable()->orderBy('created_at', 'desc')->paginate(10);
 
