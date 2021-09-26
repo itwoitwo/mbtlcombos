@@ -96,24 +96,35 @@
                         @endif
                         <div class="btn mt-0 pt-0 pr-0">
                             {{-- ハッシュタグ分岐 --}}
-                            <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_{{
-                                @if($combo->fighter == '遠野志貴')SH
-                                @elseif($combo->fighter == 'アルクェイド')AR
-                                @elseif($combo->fighter == '遠野秋葉')AK
-                                @elseif($combo->fighter == 'シエル')CI
-                                @elseif($combo->fighter == '翡翠')HI
-                                @elseif($combo->fighter == '琥珀')KO
-                                @elseif($combo->fighter == '翡翠＆琥珀')HK
-                                @elseif($combo->fighter == '軋間紅摩')KI
-                                @elseif($combo->fighter == '有馬都古')MI
-                                @elseif($combo->fighter == 'ノエル')NO
-                                @elseif($combo->fighter == 'ロア')RO
-                                @elseif($combo->fighter == 'ヴローヴ')VL
-                                @elseif($combo->fighter == '暴走アルクェイド')RE
-                                @endif
-                            }}" target="blank_">
-                                <i class="fab fa-twitter text-primary"></i>&nbsp;Tweet
-                            </a>
+                            @if($combo->fighter == '遠野志貴')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_SH" target="blank_">
+                            @elseif ($combo->fighter == 'アルクェイド')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_AR" target="blank_">
+                            @elseif ($combo->fighter == '遠野秋葉')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_AK" target="blank_">
+                            @elseif ($combo->fighter == 'シエル')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_CI" target="blank_">
+                            @elseif ($combo->fighter == '翡翠')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_HI" target="blank_">
+                            @elseif ($combo->fighter == '琥珀')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_KO" target="blank_">
+                            @elseif ($combo->fighter == '翡翠＆琥珀')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_KI" target="blank_">
+                            @elseif ($combo->fighter == '軋間紅摩')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_KI" target="blank_">
+                            @elseif ($combo->fighter == '有馬都古')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_MI" target="blank_">
+                            @elseif ($combo->fighter == 'ノエル')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_NO" target="blank_">
+                            @elseif ($combo->fighter == 'ロア')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_RO" target="blank_">
+                            @elseif ($combo->fighter == 'ヴローヴ')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_VL" target="blank_">
+                            @elseif ($combo->fighter == '暴走アルクェイド')
+                                <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_RE" target="blank_">
+                            @endif    
+                            <i class="fab fa-twitter text-primary"></i>&nbsp;Tweet
+                        </a>
                         </div>
                         @if(isset($combo->explain) || isset($combo->video))
                         <div class="btn mt-0 pt-0 pr-0">
