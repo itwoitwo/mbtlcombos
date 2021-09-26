@@ -104,10 +104,7 @@ class UsersController extends Controller
 
     public function edit()
     {   
-        $user = Auth::User();
-        if($user == null){
-            return redirect()->route('top_page');
-        }
+        $user = Auth::user();
 
         $countAdopted = 0;
         $countFavorited = 0;
