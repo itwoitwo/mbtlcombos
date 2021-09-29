@@ -22,7 +22,8 @@
                                 'ノエル' => 'ノエル',
                                 'ロア' => 'ロア',
                                 'ヴローヴ' => 'ヴローヴ',
-                                '暴走アルクェイド' => '暴走アルクェイド'
+                                '暴走アルクェイド' => '暴走アルクェイド',
+                                'セイバー' => 'セイバー',
                                 ],$user->main_character ,['class' => 'form-control col-md']) !!}
                     </div>
                     <div class="form-group card-body mx-auto">

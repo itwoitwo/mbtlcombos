@@ -63,6 +63,11 @@
                         @if($request->キャラクター == '暴走アルクェイド') selected  @endif 
                     @endif>暴走アルクェイド
                 </option>
+                <option value="セイバー"
+                    @if(isset($request))
+                        @if($request->キャラクター == 'セイバー') selected  @endif 
+                    @endif>セイバー
+                </option>
             </select>
         </div>
         <div class="col-md-3 mb-2">
