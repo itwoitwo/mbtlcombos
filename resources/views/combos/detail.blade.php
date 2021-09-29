@@ -122,6 +122,8 @@
                             <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_VL" target="blank_">
                         @elseif ($combo->fighter == '暴走アルクェイド')
                             <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_RE" target="blank_">
+                        @elseif ($combo->fighter == 'セイバー')
+                            <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}}のコンボ&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_SA" target="blank_">
                         @endif    
                         <i class="fab fa-twitter text-primary"></i>&nbsp;Tweet
                     </a>
