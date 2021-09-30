@@ -33,6 +33,11 @@
                         @if($request->キャラクター == '琥珀') selected  @endif 
                     @endif>琥珀
                 </option>
+                <option value="翡翠＆琥珀"
+                    @if(isset($request))
+                        @if($request->キャラクター == '翡翠＆琥珀') selected  @endif 
+                    @endif>翡翠＆琥珀
+                </option>
                 <option value="軋間紅摩"
                     @if(isset($request))
                         @if($request->キャラクター == '軋間紅摩') selected  @endif 
