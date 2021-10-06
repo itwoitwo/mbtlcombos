@@ -97,7 +97,7 @@
             {!! Form::textarea('コンボレシピ', old('コンボレシピ'), ['class' => 'form-control', 'rows' => '2']) !!}
         </div>
         <div class="form-group mb-4">
-            {!! Form::label('タグ', 'タグ（確反、ヒット確認簡単、対空始動、などの検索しやすくなる情報。最大30文字。）') !!}
+            {!! Form::label('タグ', 'タグ（確反、ヒット確認簡単、RB卒業、対空始動、などの検索しやすくなる情報。最大30文字。）') !!}
             {!! Form::text('タグ', old('タグ'), ['class' => 'form-control']) !!}
         </div>
         <br>
