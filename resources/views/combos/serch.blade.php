@@ -166,6 +166,11 @@
                         @if($request->始動技 == '空中技') selected  @endif 
                     @endif>空中技
                 </option>
+                <option value="必殺技"
+                    @if(isset($request))
+                        @if($request->始動技 == '必殺技') selected  @endif 
+                    @endif>必殺技
+                </option>
                 <option value="その他"
                     @if(isset($request))
                         @if($request->始動技 == 'その他') selected  @endif 
