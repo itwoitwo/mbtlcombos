@@ -90,6 +90,7 @@ class CombosController extends Controller
     {
         $this->validate($request, [
             'version' => 'required|string|',
+            '始動技' => 'required|string|',
             'explain' => 'string|max:200|nullable|',
             '動画' => 'string|max:200|nullable|url|',
             'タグ' => 'required|string|max:30|',
@@ -106,6 +107,7 @@ class CombosController extends Controller
         if (\Auth::id() === $combo->user_id){
             $combo->update([
                 'version' => $request->version,
+                'starting' => $request->始動技,
                 'explain' => $request->explain,
                 'video' => $request->動画,
                 'words' => $request->タグ,
