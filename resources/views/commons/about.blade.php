@@ -8,6 +8,7 @@
             <h2 class="card-header topic">お知らせ</h2>
             <div class="card-body">
                 <ul>
+                    <li>10/06:始動技に空中技を追加しました。</li>
                     <li>9/30:MELTY BLOOD:TYPE LUMINA 発売！</li>
                     <li>9/25:サービス開始</li>
                 </ul>
