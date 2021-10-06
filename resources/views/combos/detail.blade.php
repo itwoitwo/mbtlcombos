@@ -167,7 +167,7 @@
                                 {!! Form::select('version', [
                                     '1.01' => 'Ver. 1.01',
                                     '1.00' => 'Ver. 1.00',
-                                    ],$combo->version ,['class' => 'col-md-4 form-control']) !!}
+                                    ],$combo->version ,['class' => 'col-md form-control']) !!}
                         </div>
                         <div class="form-group mb-2 card-body">
                             {!! Form::label('始動技', '始動技の修正') !!}
@@ -178,11 +178,11 @@
                                     '空中技' => '空中技',
                                     '必殺技' => '必殺技',
                                     'その他' => 'その他',
-                                    ],$combo->starting ,['class' => 'col-md-4 form-control']) !!}
+                                    ],$combo->starting ,['class' => 'col-md form-control']) !!}
                         </div>
                         <div class="form-group card-body">
                             {!! Form::label('ダメージ', 'ダメージの修正') !!}
-                            {!! Form::text('ダメージ',$combo->damage, ['class' => 'form-control col-md-4','placeholder' => 'ダメージを入力']) !!}
+                            {!! Form::text('ダメージ',$combo->damage, ['class' => 'form-control col-md','placeholder' => 'ダメージを入力']) !!}
                         </div>
                     </div>
                     <div class="form-group mb-4 card-body">
