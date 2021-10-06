@@ -161,6 +161,11 @@
                         @if($request->始動技 == 'C系統') selected  @endif 
                     @endif>C系統
                 </option>
+                <option value="空中技"
+                    @if(isset($request))
+                        @if($request->始動技 == '空中技') selected  @endif 
+                    @endif>空中技
+                </option>
                 <option value="その他"
                     @if(isset($request))
                         @if($request->始動技 == 'その他') selected  @endif 
