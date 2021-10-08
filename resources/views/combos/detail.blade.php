@@ -165,7 +165,7 @@
                         <div class="form-group mb-2 card-body">
                             {!! Form::label('version', '対応バージョンの修正') !!}
                                 {!! Form::select('version', [
-                                    '1.01' => 'Ver. 1.01',
+                                    // '1.01' => 'Ver. 1.01',
                                     '1.00' => 'Ver. 1.00',
                                     ],$combo->version ,['class' => 'col-md form-control']) !!}
                         </div>

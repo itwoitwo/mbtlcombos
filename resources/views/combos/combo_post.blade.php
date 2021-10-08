@@ -29,7 +29,7 @@
                     ],'' ,['class' => 'form-control']) !!}
             </div>
             <div class="col-md-3 mb-2">
-                {!! Form::select('version', ['1.01' => 'Ver. 1.01', '1.00' => 'Ver. 1.00'],'1.01' ,['class' => 'form-control']) !!}
+                {!! Form::select('version', ['1.00' => 'Ver. 1.00'],'1.00' ,['class' => 'form-control']) !!}
             </div>
             <div class="col-md-3 mb-2">
                 {!! Form::select('コンボ難易度', ['' => 'コンボ難易度', '簡単' => '簡単！安定！', '普通' => 'そこそこ', '難しい' => 'ベテラン向け', '魅せコン' => '魅せコン'],'' ,['class' => 'form-control']) !!}
@@ -97,7 +97,7 @@
             {!! Form::textarea('コンボレシピ', old('コンボレシピ'), ['class' => 'form-control', 'rows' => '2']) !!}
         </div>
         <div class="form-group mb-4">
-            {!! Form::label('タグ', 'タグ（確反、ヒット確認簡単、RB卒業、対空始動、などの検索しやすくなる情報。最大30文字。）') !!}
+            {!! Form::label('タグ', 'タグ（確反、ヒット確認簡単、連打コン卒業、対空始動、などの検索しやすくなる情報。最大30文字。）') !!}
             {!! Form::text('タグ', old('タグ'), ['class' => 'form-control']) !!}
         </div>
         <br>
