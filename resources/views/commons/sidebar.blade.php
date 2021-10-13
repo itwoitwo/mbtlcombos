@@ -17,6 +17,7 @@
 		@include('users.card')
 		@endif
 	@endif
+	<a href="{{ route('arcade') }}" class="list-group-item-primary list-group-item list-group-item-action {{ request()->route()->named('arcade') ? 'active' : '' }}">おまけ（アケコン紹介）</a>
 	<br>
 	<div class="">
 		{!! Form::open(['route' => 'users.serch', 'method' => 'get']) !!}

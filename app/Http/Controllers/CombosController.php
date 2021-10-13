@@ -168,4 +168,9 @@ class CombosController extends Controller
     {
         return view('commons.rules');
     }
+
+    public function arcade()
+    {
+        return view('commons.arcade');
+    }
 }
