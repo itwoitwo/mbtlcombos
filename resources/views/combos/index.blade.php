@@ -2,7 +2,7 @@
 
 @section('content')
 @include('commons.flash_message')
-<div class="low card-group">
+<div class="low col-md card-group">
     @include('commons.sidebar')
     <div class="col-md">
         <div class="card border-info">
@@ -15,7 +15,20 @@
         </div>
         <br>
         @include('combos.combos')
-        @include('combos.combo_annotation')    
+        @include('combos.combo_annotation')
+        <br>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8705074607112164"
+                crossorigin="anonymous"></script>
+        <!-- 横長 -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-8705074607112164"
+            data-ad-slot="3369669378"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>    
     </div> 
 </div>
 <br>
