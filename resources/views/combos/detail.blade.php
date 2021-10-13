@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @include('commons.flash_message')
-<div class="low card-group">
+<div class="low col-md card-group">
     @include('commons.sidebar')
     <div class="col-md">
         <li class="card mb-3 mt-2">
