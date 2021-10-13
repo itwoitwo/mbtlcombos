@@ -17,8 +17,7 @@
                 遅延の少なさは良好、ボタンやレバーのメンテナンスや換装も可能で、本気のやり込みにも十分に応えてくれる。まずはこれを試してみて、ゲームやアケコンにハマれたらボタンやレバーの改造に手を出すのがおすすめ。ボタンは1個200～300円から。レバーは3000円ぐらい。プラスドライバーとマイナスドライバーさえあれば難しい作業は必要無い。<br>
                 欠点は、イヤホンジャックとタッチパネルが非搭載。PS4版メルブラだと、トレモのメニュー画面を非表示にすることが出来ない（？）。痛アケコンにする場合はステッカーを貼る形になるので結構大変。<br>
                 管理人が使っているのもこれのボタンとレバーを換装したもの。メルブラ開発ディレクターの芹沢鴨音さんも使っていた。<br>
-                <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=iton619-22&m=amazon&o=9&p=8&l=as1&IS2=1&detail=1&asins=B078SST6QC&linkId=9f02525bae3dd5fc5cd7afb7d07d3aa3&bc1=000000&amp;lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
-                </iframe>
+                <a href="https://www.amazon.co.jp/dp/B078SST6QC?&linkCode=li3&tag=iton619-22&linkId=c8bf819d4c8ed89948e7c8d434f8966f&language=ja_JP&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B078SST6QC&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=iton619-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=iton619-22&language=ja_JP&l=li3&o=9&a=B078SST6QC" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
             </p>
         </div>
     </div>
