@@ -10,6 +10,8 @@
 	@endif
 		<a href="{{ route('about') }}" class="list-group-item-primary list-group-item list-group-item-action {{ request()->route()->named('about*') ? 'active' : '' }}">MBTLCombosとは？</a>
 	<a href="{{route('top_page')}}" class="list-group-item-primary list-group-item list-group-item-action">トップに戻る</a>
+	<br>
+	<a href="{{ route('arcade') }}" class="list-group-item-primary list-group-item list-group-item-action {{ request()->route()->named('arcade') ? 'active' : '' }}">おまけ（アケコン紹介）</a>
 	@if (isset($user))
 		<br>
 		@if(request()->route()->named('combos.*'))
@@ -17,7 +19,6 @@
 		@include('users.card')
 		@endif
 	@endif
-	<a href="{{ route('arcade') }}" class="list-group-item-primary list-group-item list-group-item-action {{ request()->route()->named('arcade') ? 'active' : '' }}">おまけ（アケコン紹介）</a>
 	<br>
 	<div class="">
 		{!! Form::open(['route' => 'users.serch', 'method' => 'get']) !!}
