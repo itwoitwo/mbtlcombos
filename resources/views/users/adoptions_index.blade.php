@@ -18,6 +18,7 @@
         @include('combos.combos', ['combos' => $combos])
         <br>
         @include('combos.combo_annotation')
+        <br>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8705074607112164"
                 crossorigin="anonymous"></script>
         <!-- 横長 -->
