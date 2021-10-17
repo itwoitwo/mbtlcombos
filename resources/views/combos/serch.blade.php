@@ -266,7 +266,7 @@
         </div>
         <div class="form-group col-md-3 mb-2">
             {!! Form::label('タグ', ' タグ検索') !!}
-            <input class="form-control" id="タグ" placeholder="例：確反" name="タグ" type="text" @if(isset($request)) value="{{$request->タグ}}" @endif>
+            <input class="form-control" id="タグ" placeholder="例：基礎コン" name="タグ" type="text" @if(isset($request)) value="{{$request->タグ}}" @endif>
         </div>
         <div class="form-group col-md mb-2 mx-2">
             {!! Form::label('serch', '　') !!}
