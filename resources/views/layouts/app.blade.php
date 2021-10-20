@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>MBTLCombos</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="MBTLCombosは、MELTY BLOOD: TYPE LUMINA（メルブラ）のコンボを簡単に検索、管理が出来るファンサイトです。" />
+        <meta name="description" content="MBTLCombosは、MELTY BLOOD: TYPE LUMINA（メルブラ MBTL）のコンボを簡単に検索、管理が出来るファンサイトです。" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta property="og:site_name" content="MBTLCombos" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
