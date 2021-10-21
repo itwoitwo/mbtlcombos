@@ -168,4 +168,6 @@
         </li>
     @endforeach
 </ul>
-{{ $combos->appends(request()->query())->links('pagination::bootstrap-4') }}
+<div class="col-md">
+    {{ $combos->appends(request()->query())->links('pagination::bootstrap-4') }}
+</div>
