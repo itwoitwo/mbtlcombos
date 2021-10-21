@@ -27,7 +27,7 @@
 		{!! Form::close() !!}
 	</div>
 	<br>
-	{{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8705074607112164"
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8705074607112164"
      crossorigin="anonymous"></script>
 	<!-- サイドバー -->
 	<ins class="adsbygoogle"
@@ -39,5 +39,5 @@
 	<script>
 		(adsbygoogle = window.adsbygoogle || []).push({});
 	</script>
-	<br> --}}
+	<br>
 </div>
