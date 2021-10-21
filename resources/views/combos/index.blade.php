@@ -2,7 +2,7 @@
 
 @section('content')
 @include('commons.flash_message')
-<div class="low col-md">
+<div class="low col-md card-group">
     @include('commons.sidebar')
     <div class="col-md">
         <div class="card border-info">
