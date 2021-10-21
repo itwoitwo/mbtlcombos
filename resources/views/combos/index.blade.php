@@ -4,7 +4,7 @@
 @include('commons.flash_message')
 <div class="low col-md card-group">
     @include('commons.sidebar')
-    <div class="col-md card">
+    <div class="col-md card border-0">
         <div class="card border-info">
             <div class="card-header bordere-bottom border-info">
                 検索フォーム
