@@ -2,7 +2,7 @@
 @section('content')
 <div class="low card-group">
     @include('commons.sidebar')
-    <div class="col-md">
+    <div class="col-md-9">
         <div class="form-group col-md-6 offset-3 card px-0">
             {!! Form::open(['method' => 'post','route' => ['users.update', $user->id]]) !!}
             <div class="card-header">ユーザー情報編集</div>

@@ -3,7 +3,7 @@
 @include('commons.flash_message')
 <div class="low col-md card-group">
     @include('commons.sidebar')
-    <div class="col-md">
+    <div class="col-md-9">
         <li class="card mb-3 mt-2">
             <ul class="breadcrumb mb-1 rounded-0 border-bottom">
                 <li class="breadcrumb-item">{!! nl2br(e($combo->fighter)) !!}</li>

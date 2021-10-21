@@ -4,7 +4,7 @@
 @include('commons.flash_message')
 <div class="low col-md card-group">
     @include('commons.sidebar')
-    <div class="col-md">
+    <div class="col-md-9">
         @include('users.navtabs', ['user' => $user])
         <div class="card border-info">
             <div class="card-header bordere-bottom border-info">

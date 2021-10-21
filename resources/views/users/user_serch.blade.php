@@ -3,7 +3,7 @@
 @section('content')
 <div class="low col-md card-group">
     @include('commons.sidebar')
-    <div class="col-md">
+    <div class="col-md-9">
         <p>全{{$count_users_hits}}件がヒット</p>
         @foreach ($users as $user)
         <div class="card mb-2">
