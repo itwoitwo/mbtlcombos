@@ -210,7 +210,12 @@
             {!! Form::label('magic_circuit', 'マジックサーキット') !!}
             </div>
             <select name="magic_circuit" class="form-control">
-                <option value="" @if(isset($request)) @else selected @endif>ノーゲージ可</option>
+                <option value="" @if(isset($request)) @else selected @endif>指定無し</option>
+                <option value="0"
+                    @if(isset($request))
+                        @if($request->magic_circuit == '0') selected  @endif 
+                    @endif>0本
+                </option>
                 <option value="1"
                     @if(isset($request))
                         @if($request->magic_circuit == '1') selected  @endif 
@@ -232,16 +237,21 @@
                     @endif>4本
                 </option>
                 <option value="10"
-                @if(isset($request))
-                    @if($request->magic_circuit == '10') selected  @endif 
-                @endif>強制開放あり
-            </option>
+                    @if(isset($request))
+                        @if($request->magic_circuit == '10') selected  @endif 
+                    @endif>強制開放あり
+                </option>
             </select>
         </div>
         <div class="form-group col-md-3 mb-2">
             <i class="fas fa-moon fa-flip-horizontal text-warning ml-1"></i>&nbsp;:&nbsp;{!! Form::label('moon', 'ムーンアイコン') !!}
             <select name="moon" class="form-control">
-                <option value="" @if(isset($request)) @else selected @endif>ノーゲージ可</option>
+                <option value="" @if(isset($request)) @else selected @endif>指定無し</option>
+                <option value="0"
+                    @if(isset($request))
+                        @if($request->moon == '0') selected  @endif 
+                    @endif>0カウント
+                </option>
                 <option value="1"
                     @if(isset($request))
                         @if($request->moon == '1') selected  @endif 
