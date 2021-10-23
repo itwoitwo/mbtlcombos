@@ -180,7 +180,12 @@
         </div>
         <div class="col-md-3 mb-2">
             <select name="counter_hit" class="form-control">
-                <option value="" @if(isset($request)) @else selected @endif>ノーマルヒット</option>
+                <option value="" @if(isset($request)) @else selected @endif>カウンター関連</option>
+                <option value="ノーマルヒット"
+                    @if(isset($request))
+                        @if($request->counter_hit == 'ノーマルヒット') selected  @endif 
+                    @endif>ノーマルヒット
+                </option>
                 <option value="カウンター限定"
                     @if(isset($request))
                         @if($request->counter_hit == 'カウンター限定') selected  @endif 
