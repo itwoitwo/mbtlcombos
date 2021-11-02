@@ -74,7 +74,7 @@
                 {!! nl2br(e($combo->words)) !!}
             </div>
             @if(isset($combo->video))
-            <div class="card card-body border-top">
+            <div class="card-body border-top">
             <a href='{{nl2br(e($combo->video))}}' target="_blank" rel="noopener">
                 {{nl2br(e($combo->video))}}
             </a> 
