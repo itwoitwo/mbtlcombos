@@ -63,7 +63,7 @@
             <div style="font-size: 20px" class="card-body border-top">
                 {!! nl2br(e($combo->recipe)) !!}
             </div>
-            <div class="card-body border-top border-bottom py-1">
+            <div class="card-body border-top py-1">
                 {!! nl2br(e($combo->words)) !!}
             </div>
             @if(isset($combo->video))
@@ -74,7 +74,7 @@
             </div>
             @else
             @endif
-            <div class="mt-0 pt-0">
+            <div class="mt-0 pt-0 border-top">
                 {{-- ボタン --}}
                 <div class="button-group mt-0 pt-0">
                     @if (Auth::check())
