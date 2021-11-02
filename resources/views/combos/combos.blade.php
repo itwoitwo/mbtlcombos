@@ -150,7 +150,7 @@
                     @if(isset($combo->explain))
                     <div class="btn mt-0 pt-0 pr-0">
                         <a class="btn" data-toggle="collapse" href="#collapse{{$combo->id}}" role="button" aria-expanded="false" aria-controls="collapse{{$combo->id}}">
-                            <i class="far fa-file-alt text-primary"></i>&nbsp;詳細
+                            <i class="far fa-file-alt text-primary"></i>&nbsp;解説
                         </a>
                     </div>
                     {{-- 展開領域 --}}
