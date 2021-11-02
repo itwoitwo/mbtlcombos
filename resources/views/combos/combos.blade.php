@@ -156,7 +156,7 @@
                     {{-- 展開領域 --}}
                         <div class="collapse border-top" id="collapse{{$combo->id}}">
                             @if(isset($combo->explain))
-                            <div class="card card-body">
+                            <div class="card-body">
                                 {!! nl2br(e($combo->explain)) !!}
                             </div>
                             @else
