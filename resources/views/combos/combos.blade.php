@@ -70,10 +70,18 @@
             <div style="font-size: 20px" class="card-body border-top">
                 {!! nl2br(e($combo->recipe)) !!}
             </div>
-            <div class="card-body border-top border-bottom py-1">
+            <div class="card-body border-top py-1">
                 {!! nl2br(e($combo->words)) !!}
             </div>
-            <div class="mt-0 pt-0">
+            @if(isset($combo->video))
+            <div class="card card-body border-top">
+            <a href='{{nl2br(e($combo->video))}}' target="_blank" rel="noopener">
+                {{nl2br(e($combo->video))}}
+            </a> 
+            </div>
+            @else
+            @endif
+            <div class="mt-0 pt-0 border-top">
                 {{-- ボタン --}}
                 <div class="button-group mt-0 pt-0">
                     @if (Auth::check())
@@ -139,7 +147,7 @@
                             <i class="fab fa-twitter text-primary"></i>&nbsp;Tweet
                         </a>
                     </div>
-                    @if(isset($combo->explain) || isset($combo->video))
+                    @if(isset($combo->explain))
                     <div class="btn mt-0 pt-0 pr-0">
                         <a class="btn" data-toggle="collapse" href="#collapse{{$combo->id}}" role="button" aria-expanded="false" aria-controls="collapse{{$combo->id}}">
                             <i class="far fa-file-alt text-primary"></i>&nbsp;詳細
@@ -150,14 +158,6 @@
                             @if(isset($combo->explain))
                             <div class="card card-body">
                                 {!! nl2br(e($combo->explain)) !!}
-                            </div>
-                            @else
-                            @endif
-                            @if(isset($combo->video))
-                            <div class="card card-body border-0">
-                            <a href='{{nl2br(e($combo->video))}}' target="_blank" rel="noopener">
-                                {{nl2br(e($combo->video))}}
-                            </a> 
                             </div>
                             @else
                             @endif
