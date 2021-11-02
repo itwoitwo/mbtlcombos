@@ -74,6 +74,12 @@
             </div>
             @else
             @endif
+            @if(isset($combo->explain))
+            <div class="card-body border-top">
+                {!! nl2br(e($combo->explain)) !!}
+            </div>
+            @else
+            @endif
             <div class="mt-0 pt-0 border-top">
                 {{-- ボタン --}}
                 <div class="button-group mt-0 pt-0">
@@ -136,22 +142,6 @@
                         <i class="fab fa-twitter text-primary"></i>&nbsp;Tweet
                     </a>
                     </div>
-                    @if(isset($combo->explain))
-                    <div class="btn mt-0 pt-0 pr-0">
-                        <a class="btn" data-toggle="collapse" href="#collapse{{$combo->id}}" role="button" aria-expanded="true" aria-controls="collapse{{$combo->id}}">
-                            <i class="far fa-file-alt text-primary"></i>&nbsp;詳細
-                        </a>
-                    </div>
-                    {{-- 展開領域 --}}
-                        <div class="collapse border-top" id="collapse{{$combo->id}}">
-                            @if(isset($combo->explain))
-                            <div class="card-body">
-                                {!! nl2br(e($combo->explain)) !!}
-                            </div>
-                            @else
-                            @endif
-                        </div>
-                    @endif
                 </div>
             </div>
         </li>
