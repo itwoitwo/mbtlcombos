@@ -153,7 +153,7 @@
                             <i class="far fa-file-alt text-primary"></i>&nbsp;解説
                         </a>
                     </div>
-                    {{-- 展開領域 --}}
+                    {{-- 展開 --}}
                         <div class="collapse border-top" id="collapse{{$combo->id}}">
                             @if(isset($combo->explain))
                             <div class="card-body">
