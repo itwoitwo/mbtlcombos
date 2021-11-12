@@ -8,7 +8,7 @@
             <h2 class="card-header topic">お知らせ</h2>
             <div class="card-body">
                 <ul>
-                    <li>11/12:Ver. 1.03に対応しました。</li>
+                    <li>11/12:Ver. 1.04に対応しました。</li>
                     <li>11/02:動画URLなどの表示を調整しました。</li>
                     <li>10/22:ノーゲージコンボが検索できない不具合を修正しました。</li>
                     <li>10/21:Tweetボタンからコンボレシピを直接Twitterに投稿出来るようにしました。</li>

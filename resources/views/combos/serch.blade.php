@@ -78,10 +78,10 @@
         <div class="col-md-3 mb-2">
             <select name="version" class="form-control">
                 <option value="" @if(isset($request)) @else selected @endif>Ver. 指定無し</option>
-                <option value="1.03"
+                <option value="1.04"
                     @if(isset($request))
-                        @if($request->version == '1.03') selected  @endif 
-                    @endif>Ver. 1.03
+                        @if($request->version == '1.04') selected  @endif 
+                    @endif>Ver. 1.04
                 </option>
                 <option value="1.00"
                     @if(isset($request))
