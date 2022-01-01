@@ -118,7 +118,7 @@
     <div class="form-group row m-2">
         <div class="col-md-3 mb-2">
             <select name="状況" class="form-control">
-                <option value="" @if(isset($request)) @else selected @endif>画面端指定等</option>
+                <option value="" @if(isset($request)) @else selected @endif>画面端指定</option>
                 <option value=""
                     @if(isset($request))
                         @if($request->状況 == 'どこでも') selected  @endif 
