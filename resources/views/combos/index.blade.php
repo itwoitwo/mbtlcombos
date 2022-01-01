@@ -6,7 +6,7 @@
     @include('commons.sidebar')
     <div class="col-md-9">
         <div class="card border-info">
-            <div class="card-header bordere-bottom border-info">
+            <div class="card-header bordere-bottom border-info mb-2">
                 検索フォーム
             </div>
             {!! Form::open(['method' => 'get','route' => ['combos.serch']]) !!}

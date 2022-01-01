@@ -7,7 +7,7 @@
     <div class="col-md-9">
         @include('users.navtabs', ['user' => $user])
         <div class="card border-info">
-            <div class="card-header bordere-bottom border-info">
+            <div class="card-header bordere-bottom border-info mb-2">
                 検索フォーム
             </div>
             {!! Form::open(['method' => 'get','route' => ['users.adoptions_serch', $user->id]]) !!}
