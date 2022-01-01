@@ -1,8 +1,8 @@
 <div class="form-group">
     <div class="form-group row m-2">
-        <div class="col-md-6 mb-2">
+        <div class="col-md-3 mb-2">
             <select name="キャラクター" class="form-control">
-                <option value="" @if(isset($request)) @else selected @endif>キャラクターを選択</option>
+                <option value="" @if(isset($request)) @else selected @endif>キャラ選択</option>
                 <option value="遠野志貴"
                     @if(isset($request))
                         @if($request->キャラクター == '遠野志貴') selected  @endif 
@@ -76,8 +76,11 @@
             </select>
         </div>
         <div class="col-md-3 mb-2">
+            <input class="form-control" id="始動技検索" placeholder="始動技検索" name="始動技検索" type="text" @if(isset($request)) value="{{$request->始動技検索}}" @endif>
+        </div>
+        <div class="col-md-3 mb-2">
             <select name="version" class="form-control">
-                <option value="" @if(isset($request)) @else selected @endif>Ver. 指定無し</option>
+                <option value="" @if(isset($request)) @else selected @endif>Ver. 指定</option>
                 <option value="1.04"
                     @if(isset($request))
                         @if($request->version == '1.04') selected  @endif 
@@ -92,7 +95,7 @@
         </div>
         <div class="col-md-3 mb-2">
             <select name="コンボ難易度" class="form-control">
-                <option value="" @if(isset($request)) @else selected @endif>難易度指定無し</option>
+                <option value="" @if(isset($request)) @else selected @endif>難易度指定</option>
                 <option value="簡単"
                 @if(isset($request))
                         @if($request->コンボ難易度 == '簡単') selected  @endif 
@@ -115,7 +118,7 @@
     <div class="form-group row m-2">
         <div class="col-md-3 mb-2">
             <select name="状況" class="form-control">
-                <option value="" @if(isset($request)) @else selected @endif>状況を選択</option>
+                <option value="" @if(isset($request)) @else selected @endif>画面端指定等</option>
                 <option value=""
                     @if(isset($request))
                         @if($request->状況 == 'どこでも') selected  @endif 
@@ -145,7 +148,7 @@
         </div>                
         <div class="col-md-3 mb-2">
             <select name="始動技" class="form-control">
-                <option value="" @if(isset($request)) @else selected @endif>始動技を選択</option>
+                <option value="" @if(isset($request)) @else selected @endif>始動技系統指定</option>
                 <option value="A系統"
                     @if(isset($request))
                         @if($request->始動技 == 'A系統') selected  @endif 

@@ -12,6 +12,7 @@ class SerchController extends Controller
     {
         $query = Combo::query();
         $serch_fighter = $request->input('キャラクター');
+        $serch_starting_recipe = $request->input('始動技検索');
         $serch_ver = $request->input('version');
         $serch_place = $request->input('状況');
         $serch_starting = $request->input('始動技');
@@ -25,6 +26,10 @@ class SerchController extends Controller
 
         if($request->has('キャラクター') && $serch_fighter != ''){
             $query->where('fighter', $serch_fighter);
+        }
+
+        if($request->has('始動技検索') && $serch_starting_recipe != ''){
+            $query->where('recipe', 'LIKE', $serch_starting_recipe . '%');
         }
 
         if($request->has('version') && $serch_ver != ''){
@@ -89,6 +94,7 @@ class SerchController extends Controller
         $query->sortable()->where('adopts.user_id', '=', $request->user_id);
 
         $serch_fighter = $request->input('キャラクター');
+        $serch_starting_recipe = $request->input('始動技検索');
         $serch_ver = $request->input('version');
         $serch_place = $request->input('状況');
         $serch_starting = $request->input('始動技');
@@ -102,6 +108,10 @@ class SerchController extends Controller
 
         if($request->has('キャラクター') && $serch_fighter != ''){
             $query->where('fighter', $serch_fighter);
+        }
+
+        if($request->has('始動技検索') && $serch_starting_recipe != ''){
+            $query->where('recipe', 'LIKE', $serch_starting_recipe . '%');
         }
 
         if($request->has('version') && $serch_ver != ''){
@@ -183,6 +193,7 @@ class SerchController extends Controller
         $query->sortable()->where('favorites.user_id', '=', $request->user_id);
 
         $serch_fighter = $request->input('キャラクター');
+        $serch_starting_recipe = $request->input('始動技検索');
         $serch_ver = $request->input('version');
         $serch_place = $request->input('状況');
         $serch_starting = $request->input('始動技');
@@ -196,6 +207,10 @@ class SerchController extends Controller
 
         if($request->has('キャラクター') && $serch_fighter != ''){
             $query->where('fighter', $serch_fighter);
+        }
+
+        if($request->has('始動技検索') && $serch_starting_recipe != ''){
+            $query->where('recipe', 'LIKE', $serch_starting_recipe . '%');
         }
 
         if($request->has('version') && $serch_ver != ''){
@@ -276,6 +291,7 @@ class SerchController extends Controller
         $query->sortable()->where('user_id', '=', $request->user_id);
 
         $serch_fighter = $request->input('キャラクター');
+        $serch_starting_recipe = $request->input('始動技検索');
         $serch_ver = $request->input('version');
         $serch_place = $request->input('状況');
         $serch_starting = $request->input('始動技');
@@ -289,6 +305,10 @@ class SerchController extends Controller
 
         if($request->has('キャラクター') && $serch_fighter != ''){
             $query->where('fighter', $serch_fighter);
+        }
+
+        if($request->has('始動技検索') && $serch_starting_recipe != ''){
+            $query->where('recipe', 'LIKE', $serch_starting_recipe . '%');
         }
 
         if($request->has('version') && $serch_ver != ''){
