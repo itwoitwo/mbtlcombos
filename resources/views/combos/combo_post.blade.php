@@ -32,10 +32,10 @@
             </div>
             <div class="col-md-3 mb-2">
                 {!! Form::select('version', [
-                    '1.05' => 'Ver. 1.05',
+                    '1.10' => 'Ver. 1.10',
                     '1.04' => 'Ver. 1.04',
                     '1.00' => 'Ver. 1.00',
-                    ], '1.05', ['class' => 'form-control']) !!}
+                    ], '1.10', ['class' => 'form-control']) !!}
             </div>
             <div class="col-md-3 mb-2">
                 {!! Form::select('コンボ難易度', ['' => 'コンボ難易度', '簡単' => '簡単！安定！', '普通' => 'そこそこ', '難しい' => 'ベテラン向け', '魅せコン' => '魅せコン'],'' ,['class' => 'form-control']) !!}
