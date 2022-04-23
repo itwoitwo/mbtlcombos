@@ -34,6 +34,7 @@
             </div>
             <div class="col-md-3 mb-2">
                 {!! Form::select('version', [
+                    '1.21' => 'Ver. 1.21',
                     '1.10' => 'Ver. 1.10',
                     '1.04' => 'Ver. 1.04',
                     '1.00' => 'Ver. 1.00',
