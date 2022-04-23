@@ -32,6 +32,10 @@
         <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}} {{$combo->damage}}ダメージ {{$combo->recipe}}&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_DN" target="blank_">
     @elseif ($combo->fighter == '蒼崎青子')
         <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}} {{$combo->damage}}ダメージ {{$combo->recipe}}&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_AO" target="blank_">
+    @elseif ($combo->fighter == 'マーリオゥ')
+        <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}} {{$combo->damage}}ダメージ {{$combo->recipe}}&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_MA" target="blank_">
+    @elseif ($combo->fighter == '武装シエル')
+        <a class="btn" href="https://twitter.com/intent/tweet?url={{url('/')}}/combos/{{$combo->id}}&text=MBTLCombos {{$combo->fighter}} {{$combo->damage}}ダメージ {{$combo->recipe}}&hashtags=MBTLCombos,MBTL,メルブラ,MBTL_PC" target="blank_">
     @endif    
         <i class="fab fa-twitter text-primary"></i>&nbsp;Tweet
     </a>

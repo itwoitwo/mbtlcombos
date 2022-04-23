@@ -83,6 +83,16 @@
                         @if($request->キャラクター == '蒼崎青子') selected  @endif 
                     @endif>蒼崎青子
                 </option>
+                <option value="マーリオゥ"
+                    @if(isset($request))
+                        @if($request->キャラクター == 'マーリオゥ') selected  @endif 
+                    @endif>マーリオゥ
+                </option>
+                <option value="武装シエル"
+                    @if(isset($request))
+                        @if($request->キャラクター == '武装シエル') selected  @endif 
+                    @endif>武装シエル
+                </option>
             </select>
         </div>
         <div class="col-md-3 mb-2">
@@ -91,6 +101,11 @@
         <div class="col-md-3 mb-2">
             <select name="version" class="form-control">
                 <option value="" @if(isset($request)) @else selected @endif>Ver. 指定</option>
+                <option value="1.21"
+                    @if(isset($request))
+                        @if($request->version == '1.21') selected  @endif 
+                    @endif>Ver. 1.21
+                </option>
                 <option value="1.10"
                     @if(isset($request))
                         @if($request->version == '1.10') selected  @endif 

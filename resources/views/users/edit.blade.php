@@ -26,6 +26,8 @@
                                 'セイバー' => 'セイバー',
                                 '死徒ノエル' => '死徒ノエル',
                                 '蒼崎青子' => '蒼崎青子',
+                                'マーリオゥ' => 'マーリオゥ',
+                                '武装シエル' => '武装シエル',
                                 ],$user->main_character ,['class' => 'form-control col-md']) !!}
                     </div>
                     <div class="form-group card-body mx-auto">
